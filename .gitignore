@@ -1,0 +1,34 @@
+# 本地 AI / 编辑器工作区数据（不入库）
+.workbuddy/
+
+# 编辑器 / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 操作系统
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 日志与临时文件
+*.log
+*.tmp
+*.bak
+.cache/
+temp/
+tmp/
+
+# Node（项目本身零依赖，仅防未来引入工具链时误提交）
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 本地环境变量（当前项目不需要密钥，保持习惯）
+.env
+.env.local
+.env.*.local
