@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/lietxia/learning_english/data/schema/roots.schema.json",
+  "title": "英语词根图谱",
+  "type": "object",
+  "required": ["meta", "roots"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["name", "version", "generated", "root_count", "sources"],
+      "properties": {
+        "name": {"type": "string"},
+        "version": {"type": "string"},
+        "generated": {"type": "string"},
+        "root_count": {"type": "integer", "minimum": 0},
+        "curated_count": {"type": "integer", "minimum": 0},
+        "generated_count": {"type": "integer", "minimum": 0},
+        "sources": {"type": "array", "items": {"type": "string"}},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "roots": {"type": "array", "items": {"$ref": "#/$defs/root"}},
+    "affixes_raw": {"type": "array"}
+  },
+  "$defs": {
+    "pronunciation": {
+      "type": "object",
+      "required": ["ipa", "zh_approx", "method"],
+      "properties": {
+        "ipa": {"type": "string"},
+        "zh_approx": {"type": "string"},
+        "method": {"type": "string"}
+      }
+    },
+    "mnemonic": {
+      "type": "object",
+      "required": ["core", "image", "sound_link", "chain", "origin_story", "trap"],
+      "properties": {
+        "core": {"type": "string"},
+        "image": {"type": "string"},
+        "sound_link": {"type": "string"},
+        "chain": {"type": "string"},
+        "origin_story": {"type": ["string", "null"]},
+        "trap": {"type": "string"}
+      }
+    },
+    "root": {
+      "type": "object",
+      "required": ["id", "root", "variants", "meaning_en", "meaning_zh", "language",
+                   "pronunciation", "mnemonic", "quality"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "root": {"type": "string", "minLength": 1},
+        "variants": {"type": "array", "items": {"type": "string"}},
+        "meaning_en": {"type": "string"},
+        "meaning_zh": {"type": "string"},
+        "language": {"type": "string"},
+        "origins": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["lang", "word"],
+            "properties": {"lang": {"type": "string"}, "word": {"type": "string"}}
+          }
+        },
+        "etymology": {"type": "string"},
+        "examples": {"type": "array", "items": {"type": "string"}},
+        "cet_words": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["word", "zh"],
+            "properties": {
+              "word": {"type": "string"},
+              "zh": {"type": ["string", "null"]},
+              "level": {"type": "array", "items": {"type": "string"}}
+            }
+          }
+        },
+        "is_affix": {"type": "boolean"},
+        "project_family": {"type": ["string", "null"]},
+        "family": {"type": ["object", "null"]},
+        "etymology_detail": {"type": ["object", "null"]},
+        "pronunciation": {"$ref": "#/$defs/pronunciation"},
+        "mnemonic": {"$ref": "#/$defs/mnemonic"},
+        "quality": {"type": "string", "enum": ["curated", "generated", "project"]},
+        "letter": {"type": "string"}
+      }
+    }
+  }
+}

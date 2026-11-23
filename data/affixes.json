@@ -1,0 +1,4104 @@
+{
+ "meta": {
+  "name": "英语词缀库（规范 JSON）",
+  "version": "1.0.0",
+  "generated": "2026-11-23",
+  "prefix_count": 105,
+  "suffix_count": 101,
+  "sources": [
+   {
+    "name": "Online Etymology Dictionary",
+    "url": "https://www.etymonline.com/",
+    "use": "-mony / -orium / -ment / -acious / perennial 等后缀与词源"
+   },
+   {
+    "name": "Affixes.org",
+    "url": "https://affixes.org/",
+    "use": "-acious / -acity 释义与例词"
+   },
+   {
+    "name": "Linguistics Girl Morphodex",
+    "url": "https://linguisticsgirl.com/morphodex/suffix-acule",
+    "use": "-acle / -iculum 指小与工具后缀"
+   },
+   {
+    "name": "A Hull AWE -cule / -acle",
+    "url": "http://hull-awe.org.uk/",
+    "use": "-acle / -icle 拉丁指小后缀例词表"
+   },
+   {
+    "name": "Dictionary.com / Collins",
+    "url": "https://www.dictionary.com/browse/ics",
+    "use": "-ics / -ist 定义"
+   },
+   {
+    "name": "LearnEnglishSounds",
+    "url": "https://www.learnenglishsounds.com/en/blog/latin-prefix-assimilation-double-letters-accept-approve-rule",
+    "use": "拉丁前缀辅音同化对照表（ad-/con-/in-/sub-/ob-/dis-/ex-）"
+   },
+   {
+    "name": "WVCED《Morphology Matters》",
+    "url": "https://www.wvced.com/wp-content/uploads/2022/03/Morphology-Matters-April-2019.pdf",
+    "use": "同化前缀规则与后缀词性判定"
+   },
+   {
+    "name": "Grammarist / Wiktionary",
+    "url": "https://grammarist.com/prefix/ante-vs-anti/",
+    "use": "ante-（在前）与 anti-（反对）的区分"
+   },
+   {
+    "name": "新都网《词根词缀记忆法》",
+    "url": "http://edu.newdu.com/328643.html",
+    "use": "常用前缀义项中文对照"
+   }
+  ],
+  "notes": [
+   "前缀按「同化组」组织，组内常见义一致（如 ad-/ac-/af-/ap-/as-/at-）。",
+   "后缀给出「常见意思 + 词性 + 说明」。",
+   "ipa 为英语读法（规则生成，非拉丁/希腊原文读音）。"
+  ]
+ },
+ "prefixes": [
+  {
+   "form": "a-",
+   "kind": "prefix",
+   "group": "a-",
+   "meaning_zh": "无 / 不；在…状态",
+   "note": "两个来源：希腊 a-/an- 表否定（amoral 非道德的）；古英语 a- 表「在…之中」（asleep 睡着的）。看到时先判断是哪一支。",
+   "ipa": "eɪ",
+   "zh_approx": "诶",
+   "mnemonic": {
+    "core": "a- = 无 / 不；在…状态",
+    "image": "看到 a- 就想到「无 / 不；在…状态」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /eɪ/，近似「诶」。",
+    "chain": "a- = 无 / 不；在…状态",
+    "origin_story": "两个来源：希腊 a-/an- 表否定（amoral 非道德的）；古英语 a- 表「在…之中」（asleep 睡着的）。看到时先判断是哪一支。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "abs-",
+   "kind": "prefix",
+   "group": "abs-",
+   "meaning_zh": "离开，远离",
+   "note": "abs- 是拉丁 ab-「离开」在 s/t 前的变体；apo- 是希腊 apo-「从…离开」。",
+   "ipa": "æbs",
+   "zh_approx": "艾布斯",
+   "mnemonic": {
+    "core": "abs- = 离开，远离",
+    "image": "看到 abs- 就想到「离开，远离」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æbs/，近似「艾布斯」。",
+    "chain": "abs- = 离开，远离",
+    "origin_story": "abs- 是拉丁 ab-「离开」在 s/t 前的变体；apo- 是希腊 apo-「从…离开」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "apo-",
+   "kind": "prefix",
+   "group": "abs-",
+   "meaning_zh": "离开，远离",
+   "note": "abs- 是拉丁 ab-「离开」在 s/t 前的变体；apo- 是希腊 apo-「从…离开」。",
+   "ipa": "æpoʊ",
+   "zh_approx": "艾普欧",
+   "mnemonic": {
+    "core": "apo- = 离开，远离",
+    "image": "看到 apo- 就想到「离开，远离」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æpoʊ/，近似「艾普欧」。",
+    "chain": "apo- = 离开，远离",
+    "origin_story": "abs- 是拉丁 ab-「离开」在 s/t 前的变体；apo- 是希腊 apo-「从…离开」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "ad-",
+   "kind": "prefix",
+   "group": "ad-",
+   "meaning_zh": "朝向，附加；加强语气",
+   "note": "拉丁 ad-「to, toward」。后接同辅音时被同化：ac-(c) / af-(f) / ap-(p) / as-(s) / at-(t)。长相变，意思不变。",
+   "ipa": "æd",
+   "zh_approx": "艾德",
+   "mnemonic": {
+    "core": "ad- = 朝向，附加；加强语气",
+    "image": "看到 ad- 就想到「朝向，附加；加强语气」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æd/，近似「艾德」。",
+    "chain": "ad- = 朝向，附加；加强语气",
+    "origin_story": "拉丁 ad-「to, toward」。后接同辅音时被同化：ac-(c) / af-(f) / ap-(p) / as-(s) / at-(t)。长相变，意思不变。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "ac-",
+   "kind": "prefix",
+   "group": "ad-",
+   "meaning_zh": "朝向，附加；加强语气",
+   "note": "拉丁 ad-「to, toward」。后接同辅音时被同化：ac-(c) / af-(f) / ap-(p) / as-(s) / at-(t)。长相变，意思不变。",
+   "ipa": "æs",
+   "zh_approx": "艾斯",
+   "mnemonic": {
+    "core": "ac- = 朝向，附加；加强语气",
+    "image": "看到 ac- 就想到「朝向，附加；加强语气」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æs/，近似「艾斯」。",
+    "chain": "ac- = 朝向，附加；加强语气",
+    "origin_story": "拉丁 ad-「to, toward」。后接同辅音时被同化：ac-(c) / af-(f) / ap-(p) / as-(s) / at-(t)。长相变，意思不变。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "af-",
+   "kind": "prefix",
+   "group": "ad-",
+   "meaning_zh": "朝向，附加；加强语气",
+   "note": "拉丁 ad-「to, toward」。后接同辅音时被同化：ac-(c) / af-(f) / ap-(p) / as-(s) / at-(t)。长相变，意思不变。",
+   "ipa": "æf",
+   "zh_approx": "艾夫",
+   "mnemonic": {
+    "core": "af- = 朝向，附加；加强语气",
+    "image": "看到 af- 就想到「朝向，附加；加强语气」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æf/，近似「艾夫」。",
+    "chain": "af- = 朝向，附加；加强语气",
+    "origin_story": "拉丁 ad-「to, toward」。后接同辅音时被同化：ac-(c) / af-(f) / ap-(p) / as-(s) / at-(t)。长相变，意思不变。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "ap-",
+   "kind": "prefix",
+   "group": "ad-",
+   "meaning_zh": "朝向，附加；加强语气",
+   "note": "拉丁 ad-「to, toward」。后接同辅音时被同化：ac-(c) / af-(f) / ap-(p) / as-(s) / at-(t)。长相变，意思不变。",
+   "ipa": "æp",
+   "zh_approx": "艾普",
+   "mnemonic": {
+    "core": "ap- = 朝向，附加；加强语气",
+    "image": "看到 ap- 就想到「朝向，附加；加强语气」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æp/，近似「艾普」。",
+    "chain": "ap- = 朝向，附加；加强语气",
+    "origin_story": "拉丁 ad-「to, toward」。后接同辅音时被同化：ac-(c) / af-(f) / ap-(p) / as-(s) / at-(t)。长相变，意思不变。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "as-",
+   "kind": "prefix",
+   "group": "ad-",
+   "meaning_zh": "朝向，附加；加强语气",
+   "note": "拉丁 ad-「to, toward」。后接同辅音时被同化：ac-(c) / af-(f) / ap-(p) / as-(s) / at-(t)。长相变，意思不变。",
+   "ipa": "æs",
+   "zh_approx": "艾斯",
+   "mnemonic": {
+    "core": "as- = 朝向，附加；加强语气",
+    "image": "看到 as- 就想到「朝向，附加；加强语气」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æs/，近似「艾斯」。",
+    "chain": "as- = 朝向，附加；加强语气",
+    "origin_story": "拉丁 ad-「to, toward」。后接同辅音时被同化：ac-(c) / af-(f) / ap-(p) / as-(s) / at-(t)。长相变，意思不变。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "at-",
+   "kind": "prefix",
+   "group": "ad-",
+   "meaning_zh": "朝向，附加；加强语气",
+   "note": "拉丁 ad-「to, toward」。后接同辅音时被同化：ac-(c) / af-(f) / ap-(p) / as-(s) / at-(t)。长相变，意思不变。",
+   "ipa": "æt",
+   "zh_approx": "艾特",
+   "mnemonic": {
+    "core": "at- = 朝向，附加；加强语气",
+    "image": "看到 at- 就想到「朝向，附加；加强语气」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æt/，近似「艾特」。",
+    "chain": "at- = 朝向，附加；加强语气",
+    "origin_story": "拉丁 ad-「to, toward」。后接同辅音时被同化：ac-(c) / af-(f) / ap-(p) / as-(s) / at-(t)。长相变，意思不变。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "ob-",
+   "kind": "prefix",
+   "group": "ob-",
+   "meaning_zh": "朝向；对着；反对；在…上",
+   "note": "拉丁 ob-。在 c/f/p 前同化为 oc-/of-/op-。obtain「拿到手」、object「对着扔→反对」、obvious「挡在路上的→明显的」。",
+   "ipa": "ɒb",
+   "zh_approx": "奥布",
+   "mnemonic": {
+    "core": "ob- = 朝向；对着；反对；在…上",
+    "image": "看到 ob- 就想到「朝向；对着；反对；在…上」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɒb/，近似「奥布」。",
+    "chain": "ob- = 朝向；对着；反对；在…上",
+    "origin_story": "拉丁 ob-。在 c/f/p 前同化为 oc-/of-/op-。obtain「拿到手」、object「对着扔→反对」、obvious「挡在路上的→明显的」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "oc-",
+   "kind": "prefix",
+   "group": "ob-",
+   "meaning_zh": "朝向；对着；反对；在…上",
+   "note": "拉丁 ob-。在 c/f/p 前同化为 oc-/of-/op-。obtain「拿到手」、object「对着扔→反对」、obvious「挡在路上的→明显的」。",
+   "ipa": "ɒs",
+   "zh_approx": "奥斯",
+   "mnemonic": {
+    "core": "oc- = 朝向；对着；反对；在…上",
+    "image": "看到 oc- 就想到「朝向；对着；反对；在…上」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɒs/，近似「奥斯」。",
+    "chain": "oc- = 朝向；对着；反对；在…上",
+    "origin_story": "拉丁 ob-。在 c/f/p 前同化为 oc-/of-/op-。obtain「拿到手」、object「对着扔→反对」、obvious「挡在路上的→明显的」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "of-",
+   "kind": "prefix",
+   "group": "ob-",
+   "meaning_zh": "朝向；对着；反对；在…上",
+   "note": "拉丁 ob-。在 c/f/p 前同化为 oc-/of-/op-。obtain「拿到手」、object「对着扔→反对」、obvious「挡在路上的→明显的」。",
+   "ipa": "ɒf",
+   "zh_approx": "奥夫",
+   "mnemonic": {
+    "core": "of- = 朝向；对着；反对；在…上",
+    "image": "看到 of- 就想到「朝向；对着；反对；在…上」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɒf/，近似「奥夫」。",
+    "chain": "of- = 朝向；对着；反对；在…上",
+    "origin_story": "拉丁 ob-。在 c/f/p 前同化为 oc-/of-/op-。obtain「拿到手」、object「对着扔→反对」、obvious「挡在路上的→明显的」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "in-",
+   "kind": "prefix",
+   "group": "in-",
+   "meaning_zh": "向内，进入；不，否定",
+   "note": "拉丁 in- 有两个互不相关的意思，是四六级最大陷阱。判断法：去掉后剩下完整词多为「否定」（incorrect），否则多为「向内」（import）。在 b/m/p 前同化为 im-，经法语变成 em-/en-。",
+   "ipa": "ɪn",
+   "zh_approx": "伊恩",
+   "mnemonic": {
+    "core": "in- = 向内，进入；不，否定",
+    "image": "看到 in- 就想到「向内，进入；不，否定」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪn/，近似「伊恩」。",
+    "chain": "in- = 向内，进入；不，否定",
+    "origin_story": "拉丁 in- 有两个互不相关的意思，是四六级最大陷阱。判断法：去掉后剩下完整词多为「否定」（incorrect），否则多为「向内」（import）。在 b/m/p 前同化为 im-，经法语变成 em-/en-。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "im-",
+   "kind": "prefix",
+   "group": "in-",
+   "meaning_zh": "向内，进入；不，否定",
+   "note": "拉丁 in- 有两个互不相关的意思，是四六级最大陷阱。判断法：去掉后剩下完整词多为「否定」（incorrect），否则多为「向内」（import）。在 b/m/p 前同化为 im-，经法语变成 em-/en-。",
+   "ipa": "ɪm",
+   "zh_approx": "伊姆",
+   "mnemonic": {
+    "core": "im- = 向内，进入；不，否定",
+    "image": "看到 im- 就想到「向内，进入；不，否定」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪm/，近似「伊姆」。",
+    "chain": "im- = 向内，进入；不，否定",
+    "origin_story": "拉丁 in- 有两个互不相关的意思，是四六级最大陷阱。判断法：去掉后剩下完整词多为「否定」（incorrect），否则多为「向内」（import）。在 b/m/p 前同化为 im-，经法语变成 em-/en-。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "em-",
+   "kind": "prefix",
+   "group": "in-",
+   "meaning_zh": "向内，进入；不，否定",
+   "note": "拉丁 in- 有两个互不相关的意思，是四六级最大陷阱。判断法：去掉后剩下完整词多为「否定」（incorrect），否则多为「向内」（import）。在 b/m/p 前同化为 im-，经法语变成 em-/en-。",
+   "ipa": "ɛm",
+   "zh_approx": "埃姆",
+   "mnemonic": {
+    "core": "em- = 向内，进入；不，否定",
+    "image": "看到 em- 就想到「向内，进入；不，否定」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛm/，近似「埃姆」。",
+    "chain": "em- = 向内，进入；不，否定",
+    "origin_story": "拉丁 in- 有两个互不相关的意思，是四六级最大陷阱。判断法：去掉后剩下完整词多为「否定」（incorrect），否则多为「向内」（import）。在 b/m/p 前同化为 im-，经法语变成 em-/en-。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "con-",
+   "kind": "prefix",
+   "group": "con-",
+   "meaning_zh": "共同，一起；加强（完全）",
+   "note": "拉丁 cum「with」。在 b/m/p/l/r 前变 com-/col-/cor-；作强调时译「完全」（confirm 完全确认）。",
+   "ipa": "kɒn",
+   "zh_approx": "克奥恩",
+   "mnemonic": {
+    "core": "con- = 共同，一起；加强（完全）",
+    "image": "看到 con- 就想到「共同，一起；加强（完全）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /kɒn/，近似「克奥恩」。",
+    "chain": "con- = 共同，一起；加强（完全）",
+    "origin_story": "拉丁 cum「with」。在 b/m/p/l/r 前变 com-/col-/cor-；作强调时译「完全」（confirm 完全确认）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "com-",
+   "kind": "prefix",
+   "group": "con-",
+   "meaning_zh": "共同，一起；加强（完全）",
+   "note": "拉丁 cum「with」。在 b/m/p/l/r 前变 com-/col-/cor-；作强调时译「完全」（confirm 完全确认）。",
+   "ipa": "kɒm",
+   "zh_approx": "克奥姆",
+   "mnemonic": {
+    "core": "com- = 共同，一起；加强（完全）",
+    "image": "看到 com- 就想到「共同，一起；加强（完全）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /kɒm/，近似「克奥姆」。",
+    "chain": "com- = 共同，一起；加强（完全）",
+    "origin_story": "拉丁 cum「with」。在 b/m/p/l/r 前变 com-/col-/cor-；作强调时译「完全」（confirm 完全确认）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "sym-",
+   "kind": "prefix",
+   "group": "sym-",
+   "meaning_zh": "共同，一起",
+   "note": "希腊 syn-「with」；在 b/m/p 前变 sym-（symbol, sympathy, symphony）。与拉丁 con- 同义不同源。",
+   "ipa": "sɪm",
+   "zh_approx": "斯伊姆",
+   "mnemonic": {
+    "core": "sym- = 共同，一起",
+    "image": "看到 sym- 就想到「共同，一起」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /sɪm/，近似「斯伊姆」。",
+    "chain": "sym- = 共同，一起",
+    "origin_story": "希腊 syn-「with」；在 b/m/p 前变 sym-（symbol, sympathy, symphony）。与拉丁 con- 同义不同源。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "syn-",
+   "kind": "prefix",
+   "group": "sym-",
+   "meaning_zh": "共同，一起",
+   "note": "希腊 syn-「with」；在 b/m/p 前变 sym-（symbol, sympathy, symphony）。与拉丁 con- 同义不同源。",
+   "ipa": "sɪn",
+   "zh_approx": "斯伊恩",
+   "mnemonic": {
+    "core": "syn- = 共同，一起",
+    "image": "看到 syn- 就想到「共同，一起」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /sɪn/，近似「斯伊恩」。",
+    "chain": "syn- = 共同，一起",
+    "origin_story": "希腊 syn-「with」；在 b/m/p 前变 sym-（symbol, sympathy, symphony）。与拉丁 con- 同义不同源。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "sub-",
+   "kind": "prefix",
+   "group": "sub-",
+   "meaning_zh": "在…下面；次一级；从下往上",
+   "note": "拉丁 sub-。在 c/f/p/t 前同化为 suc-/suf-/sup-/sus-；在 g 前变 sug-，在 r 前变 sur-。意思永远是「下面」。",
+   "ipa": "sʌb",
+   "zh_approx": "斯阿布",
+   "mnemonic": {
+    "core": "sub- = 在…下面；次一级；从下往上",
+    "image": "看到 sub- 就想到「在…下面；次一级；从下往上」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /sʌb/，近似「斯阿布」。",
+    "chain": "sub- = 在…下面；次一级；从下往上",
+    "origin_story": "拉丁 sub-。在 c/f/p/t 前同化为 suc-/suf-/sup-/sus-；在 g 前变 sug-，在 r 前变 sur-。意思永远是「下面」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "suc-",
+   "kind": "prefix",
+   "group": "sub-",
+   "meaning_zh": "在…下面；次一级；从下往上",
+   "note": "拉丁 sub-。在 c/f/p/t 前同化为 suc-/suf-/sup-/sus-；在 g 前变 sug-，在 r 前变 sur-。意思永远是「下面」。",
+   "ipa": "sʌs",
+   "zh_approx": "斯阿斯",
+   "mnemonic": {
+    "core": "suc- = 在…下面；次一级；从下往上",
+    "image": "看到 suc- 就想到「在…下面；次一级；从下往上」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /sʌs/，近似「斯阿斯」。",
+    "chain": "suc- = 在…下面；次一级；从下往上",
+    "origin_story": "拉丁 sub-。在 c/f/p/t 前同化为 suc-/suf-/sup-/sus-；在 g 前变 sug-，在 r 前变 sur-。意思永远是「下面」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "suf-",
+   "kind": "prefix",
+   "group": "sub-",
+   "meaning_zh": "在…下面；次一级；从下往上",
+   "note": "拉丁 sub-。在 c/f/p/t 前同化为 suc-/suf-/sup-/sus-；在 g 前变 sug-，在 r 前变 sur-。意思永远是「下面」。",
+   "ipa": "sʌf",
+   "zh_approx": "斯阿夫",
+   "mnemonic": {
+    "core": "suf- = 在…下面；次一级；从下往上",
+    "image": "看到 suf- 就想到「在…下面；次一级；从下往上」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /sʌf/，近似「斯阿夫」。",
+    "chain": "suf- = 在…下面；次一级；从下往上",
+    "origin_story": "拉丁 sub-。在 c/f/p/t 前同化为 suc-/suf-/sup-/sus-；在 g 前变 sug-，在 r 前变 sur-。意思永远是「下面」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "sup-",
+   "kind": "prefix",
+   "group": "sub-",
+   "meaning_zh": "在…下面；次一级；从下往上",
+   "note": "拉丁 sub-。在 c/f/p/t 前同化为 suc-/suf-/sup-/sus-；在 g 前变 sug-，在 r 前变 sur-。意思永远是「下面」。",
+   "ipa": "sʌp",
+   "zh_approx": "斯阿普",
+   "mnemonic": {
+    "core": "sup- = 在…下面；次一级；从下往上",
+    "image": "看到 sup- 就想到「在…下面；次一级；从下往上」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /sʌp/，近似「斯阿普」。",
+    "chain": "sup- = 在…下面；次一级；从下往上",
+    "origin_story": "拉丁 sub-。在 c/f/p/t 前同化为 suc-/suf-/sup-/sus-；在 g 前变 sug-，在 r 前变 sur-。意思永远是「下面」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "sus-",
+   "kind": "prefix",
+   "group": "sub-",
+   "meaning_zh": "在…下面；次一级；从下往上",
+   "note": "拉丁 sub-。在 c/f/p/t 前同化为 suc-/suf-/sup-/sus-；在 g 前变 sug-，在 r 前变 sur-。意思永远是「下面」。",
+   "ipa": "sʌs",
+   "zh_approx": "斯阿斯",
+   "mnemonic": {
+    "core": "sus- = 在…下面；次一级；从下往上",
+    "image": "看到 sus- 就想到「在…下面；次一级；从下往上」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /sʌs/，近似「斯阿斯」。",
+    "chain": "sus- = 在…下面；次一级；从下往上",
+    "origin_story": "拉丁 sub-。在 c/f/p/t 前同化为 suc-/suf-/sup-/sus-；在 g 前变 sug-，在 r 前变 sur-。意思永远是「下面」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "super-",
+   "kind": "prefix",
+   "group": "super-",
+   "meaning_zh": "在…上面；超过，超级",
+   "note": "拉丁 super-「above, over」。",
+   "ipa": "sʌpɛr",
+   "zh_approx": "斯阿普埃尔",
+   "mnemonic": {
+    "core": "super- = 在…上面；超过，超级",
+    "image": "看到 super- 就想到「在…上面；超过，超级」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /sʌpɛr/，近似「斯阿普埃尔」。",
+    "chain": "super- = 在…上面；超过，超级",
+    "origin_story": "拉丁 super-「above, over」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "sur-",
+   "kind": "prefix",
+   "group": "sur-",
+   "meaning_zh": "在上，超过；从下（sub- 变体）",
+   "note": "两源要分清：① super- 的法语形式，表「超过 / 在上面」（surface, surpass）；② sub- 在 r 前同化，表「从下」（surreptitious）。按词义反推。",
+   "ipa": "sʌr",
+   "zh_approx": "斯阿尔",
+   "mnemonic": {
+    "core": "sur- = 在上，超过；从下（sub- 变体）",
+    "image": "看到 sur- 就想到「在上，超过；从下（sub- 变体）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /sʌr/，近似「斯阿尔」。",
+    "chain": "sur- = 在上，超过；从下（sub- 变体）",
+    "origin_story": "两源要分清：① super- 的法语形式，表「超过 / 在上面」（surface, surpass）；② sub- 在 r 前同化，表「从下」（surreptitious）。按词义反推。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "ex-",
+   "kind": "prefix",
+   "group": "ex-",
+   "meaning_zh": "向外，出；彻底；前任",
+   "note": "拉丁/希腊 ex-「out of」。在 f 前同化为 ef-（effect, effort），部分词省作 e-（eject）。另有「前任」义（ex-president）。",
+   "ipa": "ɛks",
+   "zh_approx": "埃克斯",
+   "mnemonic": {
+    "core": "ex- = 向外，出；彻底；前任",
+    "image": "看到 ex- 就想到「向外，出；彻底；前任」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛks/，近似「埃克斯」。",
+    "chain": "ex- = 向外，出；彻底；前任",
+    "origin_story": "拉丁/希腊 ex-「out of」。在 f 前同化为 ef-（effect, effort），部分词省作 e-（eject）。另有「前任」义（ex-president）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "e-",
+   "kind": "prefix",
+   "group": "ex-",
+   "meaning_zh": "向外，出；彻底；前任",
+   "note": "拉丁/希腊 ex-「out of」。在 f 前同化为 ef-（effect, effort），部分词省作 e-（eject）。另有「前任」义（ex-president）。",
+   "ipa": "iː",
+   "zh_approx": "伊",
+   "mnemonic": {
+    "core": "e- = 向外，出；彻底；前任",
+    "image": "看到 e- 就想到「向外，出；彻底；前任」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /iː/，近似「伊」。",
+    "chain": "e- = 向外，出；彻底；前任",
+    "origin_story": "拉丁/希腊 ex-「out of」。在 f 前同化为 ef-（effect, effort），部分词省作 e-（eject）。另有「前任」义（ex-president）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "ef-",
+   "kind": "prefix",
+   "group": "ex-",
+   "meaning_zh": "向外，出；彻底；前任",
+   "note": "拉丁/希腊 ex-「out of」。在 f 前同化为 ef-（effect, effort），部分词省作 e-（eject）。另有「前任」义（ex-president）。",
+   "ipa": "ɛf",
+   "zh_approx": "埃夫",
+   "mnemonic": {
+    "core": "ef- = 向外，出；彻底；前任",
+    "image": "看到 ef- 就想到「向外，出；彻底；前任」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛf/，近似「埃夫」。",
+    "chain": "ef- = 向外，出；彻底；前任",
+    "origin_story": "拉丁/希腊 ex-「out of」。在 f 前同化为 ef-（effect, effort），部分词省作 e-（eject）。另有「前任」义（ex-president）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "dis-",
+   "kind": "prefix",
+   "group": "dis-",
+   "meaning_zh": "不，否定；分开，离开",
+   "note": "拉丁 dis-「apart, away, not」。在 f 前同化为 dif-（differ, difficult）。",
+   "ipa": "dɪs",
+   "zh_approx": "德伊斯",
+   "mnemonic": {
+    "core": "dis- = 不，否定；分开，离开",
+    "image": "看到 dis- 就想到「不，否定；分开，离开」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /dɪs/，近似「德伊斯」。",
+    "chain": "dis- = 不，否定；分开，离开",
+    "origin_story": "拉丁 dis-「apart, away, not」。在 f 前同化为 dif-（differ, difficult）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "dif-",
+   "kind": "prefix",
+   "group": "dis-",
+   "meaning_zh": "不，否定；分开，离开",
+   "note": "拉丁 dis-「apart, away, not」。在 f 前同化为 dif-（differ, difficult）。",
+   "ipa": "dɪf",
+   "zh_approx": "德伊夫",
+   "mnemonic": {
+    "core": "dif- = 不，否定；分开，离开",
+    "image": "看到 dif- 就想到「不，否定；分开，离开」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /dɪf/，近似「德伊夫」。",
+    "chain": "dif- = 不，否定；分开，离开",
+    "origin_story": "拉丁 dis-「apart, away, not」。在 f 前同化为 dif-（differ, difficult）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "di-",
+   "kind": "prefix",
+   "group": "di-",
+   "meaning_zh": "二，双；分开，离开",
+   "note": "希腊 di-「二」（dioxide）；也可能是 dis- 的简化形（divide, diverge）。按词判断。",
+   "ipa": "dɪ",
+   "zh_approx": "德伊",
+   "mnemonic": {
+    "core": "di- = 二，双；分开，离开",
+    "image": "看到 di- 就想到「二，双；分开，离开」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /dɪ/，近似「德伊」。",
+    "chain": "di- = 二，双；分开，离开",
+    "origin_story": "希腊 di-「二」（dioxide）；也可能是 dis- 的简化形（divide, diverge）。按词判断。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "de-",
+   "kind": "prefix",
+   "group": "de-",
+   "meaning_zh": "向下；去除；否定；彻底",
+   "note": "拉丁 de-「down, away, off」。decrease 下降、decode 解码、destroy 彻底毁坏、deny 否定，都从「往下 / 拿掉」延伸。",
+   "ipa": "d",
+   "zh_approx": "德",
+   "mnemonic": {
+    "core": "de- = 向下；去除；否定；彻底",
+    "image": "看到 de- 就想到「向下；去除；否定；彻底」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /d/，近似「德」。",
+    "chain": "de- = 向下；去除；否定；彻底",
+    "origin_story": "拉丁 de-「down, away, off」。decrease 下降、decode 解码、destroy 彻底毁坏、deny 否定，都从「往下 / 拿掉」延伸。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "re-",
+   "kind": "prefix",
+   "group": "re-",
+   "meaning_zh": "回，向后；再，重新",
+   "note": "最高频前缀之一，两个意思都要记：return 回、review 再看一遍。",
+   "ipa": "r",
+   "zh_approx": "尔",
+   "mnemonic": {
+    "core": "re- = 回，向后；再，重新",
+    "image": "看到 re- 就想到「回，向后；再，重新」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /r/，近似「尔」。",
+    "chain": "re- = 回，向后；再，重新",
+    "origin_story": "最高频前缀之一，两个意思都要记：return 回、review 再看一遍。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "retro-",
+   "kind": "prefix",
+   "group": "retro-",
+   "meaning_zh": "向后，回顾",
+   "note": "拉丁 retro-「backward」。retrospect 回顾、retrograde 倒退。",
+   "ipa": "rɛtroʊ",
+   "zh_approx": "尔埃特尔欧",
+   "mnemonic": {
+    "core": "retro- = 向后，回顾",
+    "image": "看到 retro- 就想到「向后，回顾」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /rɛtroʊ/，近似「尔埃特尔欧」。",
+    "chain": "retro- = 向后，回顾",
+    "origin_story": "拉丁 retro-「backward」。retrospect 回顾、retrograde 倒退。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "pre-",
+   "kind": "prefix",
+   "group": "pre-",
+   "meaning_zh": "在…之前，预先",
+   "note": "拉丁 prae-「before」，表时间或顺序在前。",
+   "ipa": "pr",
+   "zh_approx": "普尔",
+   "mnemonic": {
+    "core": "pre- = 在…之前，预先",
+    "image": "看到 pre- 就想到「在…之前，预先」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /pr/，近似「普尔」。",
+    "chain": "pre- = 在…之前，预先",
+    "origin_story": "拉丁 prae-「before」，表时间或顺序在前。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "pro-",
+   "kind": "prefix",
+   "group": "pro-",
+   "meaning_zh": "向前；赞同；代替；预先",
+   "note": "拉丁/希腊 pro-。progress 前进、pro-American 亲美、pronoun 代替名词、prospect 向前看。",
+   "ipa": "proʊ",
+   "zh_approx": "普尔欧",
+   "mnemonic": {
+    "core": "pro- = 向前；赞同；代替；预先",
+    "image": "看到 pro- 就想到「向前；赞同；代替；预先」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /proʊ/，近似「普尔欧」。",
+    "chain": "pro- = 向前；赞同；代替；预先",
+    "origin_story": "拉丁/希腊 pro-。progress 前进、pro-American 亲美、pronoun 代替名词、prospect 向前看。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "per-",
+   "kind": "prefix",
+   "group": "per-",
+   "meaning_zh": "贯穿，完全；通过",
+   "note": "拉丁 per-「through」。perfect 做透、perspective 看穿、permit 放行。",
+   "ipa": "pɛr",
+   "zh_approx": "普埃尔",
+   "mnemonic": {
+    "core": "per- = 贯穿，完全；通过",
+    "image": "看到 per- 就想到「贯穿，完全；通过」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /pɛr/，近似「普埃尔」。",
+    "chain": "per- = 贯穿，完全；通过",
+    "origin_story": "拉丁 per-「through」。perfect 做透、perspective 看穿、permit 放行。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "trans-",
+   "kind": "prefix",
+   "group": "trans-",
+   "meaning_zh": "跨越，转变；穿过",
+   "note": "拉丁 trans-「across」。transport 跨地运、transform 变形、transparent 透光。",
+   "ipa": "træns",
+   "zh_approx": "特尔艾恩斯",
+   "mnemonic": {
+    "core": "trans- = 跨越，转变；穿过",
+    "image": "看到 trans- 就想到「跨越，转变；穿过」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /træns/，近似「特尔艾恩斯」。",
+    "chain": "trans- = 跨越，转变；穿过",
+    "origin_story": "拉丁 trans-「across」。transport 跨地运、transform 变形、transparent 透光。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "inter-",
+   "kind": "prefix",
+   "group": "inter-",
+   "meaning_zh": "在…之间，相互",
+   "note": "拉丁 inter-「between / among」。international, interact。",
+   "ipa": "ɪntɛr",
+   "zh_approx": "伊恩特埃尔",
+   "mnemonic": {
+    "core": "inter- = 在…之间，相互",
+    "image": "看到 inter- 就想到「在…之间，相互」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪntɛr/，近似「伊恩特埃尔」。",
+    "chain": "inter- = 在…之间，相互",
+    "origin_story": "拉丁 inter-「between / among」。international, interact。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "intro-",
+   "kind": "prefix",
+   "group": "intro-",
+   "meaning_zh": "向内，在内",
+   "note": "拉丁 intro-「inward」，与 intra-「内部」相近。introduce 引进去、introspect 内省。",
+   "ipa": "ɪntroʊ",
+   "zh_approx": "伊恩特尔欧",
+   "mnemonic": {
+    "core": "intro- = 向内，在内",
+    "image": "看到 intro- 就想到「向内，在内」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪntroʊ/，近似「伊恩特尔欧」。",
+    "chain": "intro- = 向内，在内",
+    "origin_story": "拉丁 intro-「inward」，与 intra-「内部」相近。introduce 引进去、introspect 内省。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "para-",
+   "kind": "prefix",
+   "group": "para-",
+   "meaning_zh": "旁边；辅助；类似；防",
+   "note": "希腊 para-「beside」。parallel 并排、paramedic 辅助医护、parasol 挡太阳。",
+   "ipa": "pærə",
+   "zh_approx": "普艾尔厄",
+   "mnemonic": {
+    "core": "para- = 旁边；辅助；类似；防",
+    "image": "看到 para- 就想到「旁边；辅助；类似；防」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /pærə/，近似「普艾尔厄」。",
+    "chain": "para- = 旁边；辅助；类似；防",
+    "origin_story": "希腊 para-「beside」。parallel 并排、paramedic 辅助医护、parasol 挡太阳。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "cata-",
+   "kind": "prefix",
+   "group": "cata-",
+   "meaning_zh": "向下；彻底，按照",
+   "note": "希腊 kata-「down」。catalogue 逐条列下、catastrophe 急转直下、catalyst。",
+   "ipa": "kætə",
+   "zh_approx": "克艾特厄",
+   "mnemonic": {
+    "core": "cata- = 向下；彻底，按照",
+    "image": "看到 cata- 就想到「向下；彻底，按照」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /kætə/，近似「克艾特厄」。",
+    "chain": "cata- = 向下；彻底，按照",
+    "origin_story": "希腊 kata-「down」。catalogue 逐条列下、catastrophe 急转直下、catalyst。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "dia-",
+   "kind": "prefix",
+   "group": "dia-",
+   "meaning_zh": "穿过，贯通；两者之间",
+   "note": "希腊 dia-「through / across」。dialogue 两人的话穿过、diameter 穿圆心的线、diagnosis 看透病情。",
+   "ipa": "dɪə",
+   "zh_approx": "德伊厄",
+   "mnemonic": {
+    "core": "dia- = 穿过，贯通；两者之间",
+    "image": "看到 dia- 就想到「穿过，贯通；两者之间」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /dɪə/，近似「德伊厄」。",
+    "chain": "dia- = 穿过，贯通；两者之间",
+    "origin_story": "希腊 dia-「through / across」。dialogue 两人的话穿过、diameter 穿圆心的线、diagnosis 看透病情。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "ana-",
+   "kind": "prefix",
+   "group": "ana-",
+   "meaning_zh": "向上；回，再；分开，贯穿",
+   "note": "希腊 ana-「up / back / again / apart」。analysis 拆开来看、anatomy 切开来看。",
+   "ipa": "ænə",
+   "zh_approx": "艾恩厄",
+   "mnemonic": {
+    "core": "ana- = 向上；回，再；分开，贯穿",
+    "image": "看到 ana- 就想到「向上；回，再；分开，贯穿」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ænə/，近似「艾恩厄」。",
+    "chain": "ana- = 向上；回，再；分开，贯穿",
+    "origin_story": "希腊 ana-「up / back / again / apart」。analysis 拆开来看、anatomy 切开来看。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "anti-",
+   "kind": "prefix",
+   "group": "anti-",
+   "meaning_zh": "反对，对抗；相反",
+   "note": "希腊 anti-「against」（antiwar, antibody）。重要特例：anticipate 里的 anti- 其实是拉丁 ante-「在前」的旧拼法，OED 明确列为 ante-/anti- 混写的历史遗留，不能当成 anti- 的常见义去套其他词。",
+   "ipa": "æntɪ",
+   "zh_approx": "艾恩特伊",
+   "mnemonic": {
+    "core": "anti- = 反对，对抗；相反",
+    "image": "看到 anti- 就想到「反对，对抗；相反」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æntɪ/，近似「艾恩特伊」。",
+    "chain": "anti- = 反对，对抗；相反",
+    "origin_story": "希腊 anti-「against」（antiwar, antibody）。重要特例：anticipate 里的 anti- 其实是拉丁 ante-「在前」的旧拼法，OED 明确列为 ante-/anti- 混写的历史遗留，不能当成 anti- 的常见义去套其他词。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "contra-",
+   "kind": "prefix",
+   "group": "contra-",
+   "meaning_zh": "相反，反对",
+   "note": "拉丁 contra-「against」。contrast 对照、contradict 说反话。",
+   "ipa": "kɒntrə",
+   "zh_approx": "克奥恩特尔厄",
+   "mnemonic": {
+    "core": "contra- = 相反，反对",
+    "image": "看到 contra- 就想到「相反，反对」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /kɒntrə/，近似「克奥恩特尔厄」。",
+    "chain": "contra- = 相反，反对",
+    "origin_story": "拉丁 contra-「against」。contrast 对照、contradict 说反话。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "auto-",
+   "kind": "prefix",
+   "group": "auto-",
+   "meaning_zh": "自己，自动",
+   "note": "希腊 autos「self」。automatic, autobiography。",
+   "ipa": "ɔtoʊ",
+   "zh_approx": "奥特欧",
+   "mnemonic": {
+    "core": "auto- = 自己，自动",
+    "image": "看到 auto- 就想到「自己，自动」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɔtoʊ/，近似「奥特欧」。",
+    "chain": "auto- = 自己，自动",
+    "origin_story": "希腊 autos「self」。automatic, autobiography。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "bene-",
+   "kind": "prefix",
+   "group": "bene-",
+   "meaning_zh": "好，善",
+   "note": "拉丁 bene「well」。benefit 好处、benevolent 好心的；反义是 mal-「坏」。",
+   "ipa": "bɛn",
+   "zh_approx": "布埃恩",
+   "mnemonic": {
+    "core": "bene- = 好，善",
+    "image": "看到 bene- 就想到「好，善」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /bɛn/，近似「布埃恩」。",
+    "chain": "bene- = 好，善",
+    "origin_story": "拉丁 bene「well」。benefit 好处、benevolent 好心的；反义是 mal-「坏」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "bi-",
+   "kind": "prefix",
+   "group": "bi-",
+   "meaning_zh": "二，双",
+   "note": "拉丁 bi-「two」。bicycle, bilingual；注意 biannual 每年两次 vs biennial 每两年一次。",
+   "ipa": "bɪ",
+   "zh_approx": "布伊",
+   "mnemonic": {
+    "core": "bi- = 二，双",
+    "image": "看到 bi- 就想到「二，双」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /bɪ/，近似「布伊」。",
+    "chain": "bi- = 二，双",
+    "origin_story": "拉丁 bi-「two」。bicycle, bilingual；注意 biannual 每年两次 vs biennial 每两年一次。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "uni-",
+   "kind": "prefix",
+   "group": "uni-",
+   "meaning_zh": "一，单一",
+   "note": "拉丁 unus「one」。uniform 同一形式、unique 独一无二。",
+   "ipa": "ʌnɪ",
+   "zh_approx": "阿恩伊",
+   "mnemonic": {
+    "core": "uni- = 一，单一",
+    "image": "看到 uni- 就想到「一，单一」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ʌnɪ/，近似「阿恩伊」。",
+    "chain": "uni- = 一，单一",
+    "origin_story": "拉丁 unus「one」。uniform 同一形式、unique 独一无二。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "tele-",
+   "kind": "prefix",
+   "group": "tele-",
+   "meaning_zh": "远距离",
+   "note": "希腊 tele「far off」。telephone, telescope, television。",
+   "ipa": "tɛl",
+   "zh_approx": "特埃勒",
+   "mnemonic": {
+    "core": "tele- = 远距离",
+    "image": "看到 tele- 就想到「远距离」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /tɛl/，近似「特埃勒」。",
+    "chain": "tele- = 远距离",
+    "origin_story": "希腊 tele「far off」。telephone, telescope, television。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "equi-",
+   "kind": "prefix",
+   "group": "equi-",
+   "meaning_zh": "相等，均等",
+   "note": "来自拉丁 aequus「equal」，严格说是词根，不是原生前缀。equivalent 等值的、equilibrium 平衡。",
+   "ipa": "ɛkwɪ",
+   "zh_approx": "埃克乌伊",
+   "mnemonic": {
+    "core": "equi- = 相等，均等",
+    "image": "看到 equi- 就想到「相等，均等」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛkwɪ/，近似「埃克乌伊」。",
+    "chain": "equi- = 相等，均等",
+    "origin_story": "来自拉丁 aequus「equal」，严格说是词根，不是原生前缀。equivalent 等值的、equilibrium 平衡。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "art-",
+   "kind": "prefix",
+   "group": "art-",
+   "meaning_zh": "技巧，技艺",
+   "note": "拉丁 ars / art-「skill」，本身是词根。artificial 靠技巧做出来的、artifact 人工制品。",
+   "ipa": "ɑːrt",
+   "zh_approx": "阿尔特",
+   "mnemonic": {
+    "core": "art- = 技巧，技艺",
+    "image": "看到 art- 就想到「技巧，技艺」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɑːrt/，近似「阿尔特」。",
+    "chain": "art- = 技巧，技艺",
+    "origin_story": "拉丁 ars / art-「skill」，本身是词根。artificial 靠技巧做出来的、artifact 人工制品。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "bio-",
+   "kind": "prefix",
+   "group": "bio-",
+   "meaning_zh": "生命",
+   "note": "希腊 bios「life」，本身是词根。biology 生命之学、biography 生平记录。",
+   "ipa": "baɪəʊ",
+   "zh_approx": "布艾欧",
+   "mnemonic": {
+    "core": "bio- = 生命",
+    "image": "看到 bio- 就想到「生命」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /baɪəʊ/，近似「布艾欧」。",
+    "chain": "bio- = 生命",
+    "origin_story": "希腊 bios「life」，本身是词根。biology 生命之学、biography 生平记录。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "eco-",
+   "kind": "prefix",
+   "group": "eco-",
+   "meaning_zh": "家 / 生态；经济",
+   "note": "希腊 oikos「house 家」。economy 本义「治家 / 管家」，ecology「关于家的学问」。两支同源，别只记「生态」。",
+   "ipa": "iːkəʊ",
+   "zh_approx": "伊克欧",
+   "mnemonic": {
+    "core": "eco- = 家 / 生态；经济",
+    "image": "看到 eco- 就想到「家 / 生态；经济」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /iːkəʊ/，近似「伊克欧」。",
+    "chain": "eco- = 家 / 生态；经济",
+    "origin_story": "希腊 oikos「house 家」。economy 本义「治家 / 管家」，ecology「关于家的学问」。两支同源，别只记「生态」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "geo-",
+   "kind": "prefix",
+   "group": "geo-",
+   "meaning_zh": "地，地球",
+   "note": "希腊 ge「earth」，本身是词根。geography, geology, geometry（测地）。",
+   "ipa": "dʒɛoʊ",
+   "zh_approx": "吉埃欧",
+   "mnemonic": {
+    "core": "geo- = 地，地球",
+    "image": "看到 geo- 就想到「地，地球」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /dʒɛoʊ/，近似「吉埃欧」。",
+    "chain": "geo- = 地，地球",
+    "origin_story": "希腊 ge「earth」，本身是词根。geography, geology, geometry（测地）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "hydro-",
+   "kind": "prefix",
+   "group": "hydro-",
+   "meaning_zh": "水",
+   "note": "希腊 hydor「water」，本身是词根。hydrogen 生成水的、hydroelectric 水电。",
+   "ipa": "hɪdroʊ",
+   "zh_approx": "赫伊德尔欧",
+   "mnemonic": {
+    "core": "hydro- = 水",
+    "image": "看到 hydro- 就想到「水」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /hɪdroʊ/，近似「赫伊德尔欧」。",
+    "chain": "hydro- = 水",
+    "origin_story": "希腊 hydor「water」，本身是词根。hydrogen 生成水的、hydroelectric 水电。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "photo-",
+   "kind": "prefix",
+   "group": "photo-",
+   "meaning_zh": "光",
+   "note": "希腊 phos / phot-「light」，本身是词根。photograph 用光记录、photosynthesis 光合。",
+   "ipa": "fəʊtəʊ",
+   "zh_approx": "夫欧特欧",
+   "mnemonic": {
+    "core": "photo- = 光",
+    "image": "看到 photo- 就想到「光」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /fəʊtəʊ/，近似「夫欧特欧」。",
+    "chain": "photo- = 光",
+    "origin_story": "希腊 phos / phot-「light」，本身是词根。photograph 用光记录、photosynthesis 光合。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "psycho-",
+   "kind": "prefix",
+   "group": "psycho-",
+   "meaning_zh": "心理，灵魂",
+   "note": "希腊 psyche「soul / mind」，本身是词根。psychology 心灵之学。",
+   "ipa": "sɪkoʊ",
+   "zh_approx": "斯伊克欧",
+   "mnemonic": {
+    "core": "psycho- = 心理，灵魂",
+    "image": "看到 psycho- 就想到「心理，灵魂」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /sɪkoʊ/，近似「斯伊克欧」。",
+    "chain": "psycho- = 心理，灵魂",
+    "origin_story": "希腊 psyche「soul / mind」，本身是词根。psychology 心灵之学。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "techn-",
+   "kind": "prefix",
+   "group": "techn-",
+   "meaning_zh": "技艺，技术",
+   "note": "希腊 techne「art / craft」，本身是词根。technology 技艺之学、technical。",
+   "ipa": "tɛkn",
+   "zh_approx": "特埃克恩",
+   "mnemonic": {
+    "core": "techn- = 技艺，技术",
+    "image": "看到 techn- 就想到「技艺，技术」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /tɛkn/，近似「特埃克恩」。",
+    "chain": "techn- = 技艺，技术",
+    "origin_story": "希腊 techne「art / craft」，本身是词根。technology 技艺之学、technical。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "ver-",
+   "kind": "prefix",
+   "group": "ver-",
+   "meaning_zh": "真实",
+   "note": "拉丁 verus「true」，本身是词根。verify 使成真、verdict 说出真相。",
+   "ipa": "vɜːr",
+   "zh_approx": "弗厄尔",
+   "mnemonic": {
+    "core": "ver- = 真实",
+    "image": "看到 ver- 就想到「真实」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /vɜːr/，近似「弗厄尔」。",
+    "chain": "ver- = 真实",
+    "origin_story": "拉丁 verus「true」，本身是词根。verify 使成真、verdict 说出真相。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "manu-",
+   "kind": "prefix",
+   "group": "manu-",
+   "meaning_zh": "手",
+   "note": "拉丁 manus「hand」，本身是词根；main- 是它经法语后的形式（maintain 用手维持）。manuscript 手写稿、manufacture 手工做。",
+   "ipa": "mænjuː",
+   "zh_approx": "姆艾恩尤",
+   "mnemonic": {
+    "core": "manu- = 手",
+    "image": "看到 manu- 就想到「手」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /mænjuː/，近似「姆艾恩尤」。",
+    "chain": "manu- = 手",
+    "origin_story": "拉丁 manus「hand」，本身是词根；main- 是它经法语后的形式（maintain 用手维持）。manuscript 手写稿、manufacture 手工做。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "main-",
+   "kind": "prefix",
+   "group": "manu-",
+   "meaning_zh": "手",
+   "note": "拉丁 manus「hand」，本身是词根；main- 是它经法语后的形式（maintain 用手维持）。manuscript 手写稿、manufacture 手工做。",
+   "ipa": "meɪn",
+   "zh_approx": "姆诶恩",
+   "mnemonic": {
+    "core": "main- = 手",
+    "image": "看到 main- 就想到「手」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /meɪn/，近似「姆诶恩」。",
+    "chain": "main- = 手",
+    "origin_story": "拉丁 manus「hand」，本身是词根；main- 是它经法语后的形式（maintain 用手维持）。manuscript 手写稿、manufacture 手工做。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "pass",
+   "kind": "prefix",
+   "group": "pass",
+   "meaning_zh": "通过，走过",
+   "note": "拉丁 passus「step / passage」，本身是词根。passport = 让你通过港口的证件；这里不是前缀。",
+   "ipa": "pæss",
+   "zh_approx": "普艾斯斯",
+   "mnemonic": {
+    "core": "pass = 通过，走过",
+    "image": "看到 pass 就想到「通过，走过」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /pæss/，近似「普艾斯斯」。",
+    "chain": "pass = 通过，走过",
+    "origin_story": "拉丁 passus「step / passage」，本身是词根。passport = 让你通过港口的证件；这里不是前缀。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "pos-",
+   "kind": "prefix",
+   "group": "pos-",
+   "meaning_zh": "能，掌握（potis / posse）",
+   "note": "possess 来自拉丁 possidere = potis「能、有权」+ sedere「坐」，本义「坐拥 / 有权占有」，不是「向前」。同族的 possible、potential 都是「能」。",
+   "ipa": "pɒz",
+   "zh_approx": "普奥兹",
+   "mnemonic": {
+    "core": "pos- = 能，掌握（potis / posse）",
+    "image": "看到 pos- 就想到「能，掌握（potis / posse）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /pɒz/，近似「普奥兹」。",
+    "chain": "pos- = 能，掌握（potis / posse）",
+    "origin_story": "possess 来自拉丁 possidere = potis「能、有权」+ sedere「坐」，本义「坐拥 / 有权占有」，不是「向前」。同族的 possible、potential 都是「能」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "ac",
+   "kind": "prefix",
+   "meaning_zh": "观点；要点",
+   "note": "(), (), (), (), (),",
+   "language": "Greek",
+   "examples": [
+    "Acidanthera",
+    "acme",
+    "acmeism",
+    "acmesthesia",
+    "acmic",
+    "acne"
+   ],
+   "ipa": "æs",
+   "zh_approx": "艾斯",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "ac = 观点；要点",
+    "image": "看到 ac 就想到「观点；要点」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æs/，近似「艾斯」。",
+    "chain": "ac = 观点；要点",
+    "origin_story": "(), (), (), (), (),",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "ac",
+   "kind": "prefix",
+   "meaning_zh": "疗法；治愈方法",
+   "note": "(), (), ()",
+   "language": "Greek",
+   "examples": [
+    "aceology",
+    "autacoid",
+    "panacea"
+   ],
+   "ipa": "æs",
+   "zh_approx": "艾斯",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "ac = 疗法；治愈方法",
+    "image": "看到 ac 就想到「疗法；治愈方法」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æs/，近似「艾斯」。",
+    "chain": "ac = 疗法；治愈方法",
+    "origin_story": "(), (), ()",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "ad",
+   "kind": "prefix",
+   "meaning_zh": "朝向…移动；此外",
+   "note": "\"to\", \"toward\"",
+   "language": "Latin",
+   "examples": [
+    "accept",
+    "accurate",
+    "adapt",
+    "addition",
+    "address",
+    "adept",
+    "adherent",
+    "adhesive"
+   ],
+   "ipa": "æd",
+   "zh_approx": "艾德",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "ad = 朝向…移动；此外",
+    "image": "看到 ad 就想到「朝向…移动；此外」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æd/，近似「艾德」。",
+    "chain": "ad = 朝向…移动；此外",
+    "origin_story": "\"to\", \"toward\"",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "ana",
+   "kind": "prefix",
+   "meaning_zh": "再，又；相反，反对；向后；向上",
+   "note": "()",
+   "language": "Greek",
+   "examples": [
+    "anagram",
+    "anabaptist",
+    "anaphylaxis",
+    "anarrhexis",
+    "anion",
+    "anode"
+   ],
+   "ipa": "ænə",
+   "zh_approx": "艾恩厄",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "ana = 再，又；相反，反对；向后；向上",
+    "image": "看到 ana 就想到「再，又；相反，反对；向后；向上」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ænə/，近似「艾恩厄」。",
+    "chain": "ana = 再，又；相反，反对；向后；向上",
+    "origin_story": "()",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "ap",
+   "kind": "prefix",
+   "meaning_zh": "离开；远离；分离；在极远处",
+   "note": "() \"from, away, un-, quite\", sometimes \"changed, switched\"",
+   "language": "Greek",
+   "examples": [
+    "aphelion",
+    "apocrine",
+    "apocryphal",
+    "apogee",
+    "aporrhinosis",
+    "apostasy",
+    "apostate"
+   ],
+   "ipa": "æp",
+   "zh_approx": "艾普",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "ap = 离开；远离；分离；在极远处",
+    "image": "看到 ap 就想到「离开；远离；分离；在极远处」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æp/，近似「艾普」。",
+    "chain": "ap = 离开；远离；分离；在极远处",
+    "origin_story": "() \"from, away, un-, quite\", sometimes \"changed, switched\"",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "art",
+   "kind": "prefix",
+   "meaning_zh": "艺术；美术，技能；技巧；本领",
+   "note": null,
+   "language": "Latin",
+   "examples": [
+    "artifact",
+    "artifice",
+    "artificial",
+    "artificiality",
+    "artisan"
+   ],
+   "ipa": "ɑːrt",
+   "zh_approx": "阿尔特",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "art = 艺术；美术，技能；技巧；本领",
+    "image": "看到 art 就想到「艺术；美术，技能；技巧；本领」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɑːrt/，近似「阿尔特」。",
+    "chain": "art = 艺术；美术，技能；技巧；本领",
+    "origin_story": null,
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "bi",
+   "kind": "prefix",
+   "meaning_zh": "二",
+   "note": ", \"twice\"; , \"in twos\"",
+   "language": "Latin",
+   "examples": [
+    "bicycle",
+    "biennial",
+    "bifocal",
+    "bisexual",
+    "bigamy",
+    "binary",
+    "binoculars",
+    "bipod bipolar biscotti"
+   ],
+   "ipa": "bɪ",
+   "zh_approx": "布伊",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "bi = 二",
+    "image": "看到 bi 就想到「二」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /bɪ/，近似「布伊」。",
+    "chain": "bi = 二",
+    "origin_story": ", \"twice\"; , \"in twos\"",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "bio",
+   "kind": "prefix",
+   "meaning_zh": "生活；人生",
+   "note": "(), () \"life\", (), (), ()",
+   "language": "Greek",
+   "examples": [
+    "abiogenesis",
+    "abiotic",
+    "aerobiology",
+    "anhydrobiosis",
+    "anoxybiosis",
+    "antibiotic",
+    "astrobiology",
+    "autobiography"
+   ],
+   "ipa": "baɪəʊ",
+   "zh_approx": "布艾欧",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "bio = 生活；人生",
+    "image": "看到 bio 就想到「生活；人生」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /baɪəʊ/，近似「布艾欧」。",
+    "chain": "bio = 生活；人生",
+    "origin_story": "(), () \"life\", (), (), ()",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "cata",
+   "kind": "prefix",
+   "meaning_zh": "向下；反对；向后",
+   "note": "() \"down, against, back\"",
+   "language": "Greek",
+   "examples": [
+    "catabolic",
+    "catacomb",
+    "catalyst",
+    "catarrhine",
+    "catastrophe",
+    "catatonia",
+    "cathode",
+    "cation"
+   ],
+   "ipa": "kætə",
+   "zh_approx": "克艾特厄",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "cata = 向下；反对；向后",
+    "image": "看到 cata 就想到「向下；反对；向后」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /kætə/，近似「克艾特厄」。",
+    "chain": "cata = 向下；反对；向后",
+    "origin_story": "() \"down, against, back\"",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "com",
+   "kind": "prefix",
+   "meaning_zh": "友谊赛，种类",
+   "note": "\"courteous, kind\"",
+   "language": "Latin",
+   "examples": [
+    "comity"
+   ],
+   "ipa": "kɒm",
+   "zh_approx": "克奥姆",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "com = 友谊赛，种类",
+    "image": "看到 com 就想到「友谊赛，种类」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /kɒm/，近似「克奥姆」。",
+    "chain": "com = 友谊赛，种类",
+    "origin_story": "\"courteous, kind\"",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "con",
+   "kind": "prefix",
+   "meaning_zh": "一起；共同",
+   "note": null,
+   "language": "Latin",
+   "examples": [
+    "coagulate",
+    "collide",
+    "compress",
+    "connect",
+    "connote",
+    "contain",
+    "contribute",
+    "consult"
+   ],
+   "ipa": "kɒn",
+   "zh_approx": "克奥恩",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "con = 一起；共同",
+    "image": "看到 con 就想到「一起；共同」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /kɒn/，近似「克奥恩」。",
+    "chain": "con = 一起；共同",
+    "origin_story": null,
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "con",
+   "kind": "prefix",
+   "meaning_zh": "圆锥（体）",
+   "note": "(), ()",
+   "language": "Greek",
+   "examples": [
+    "conic",
+    "conical",
+    "conicoid",
+    "conodont",
+    "conoid",
+    "conoscope",
+    "orthocone",
+    "orthoconic"
+   ],
+   "ipa": "kɒn",
+   "zh_approx": "克奥恩",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "con = 圆锥（体）",
+    "image": "看到 con 就想到「圆锥（体）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /kɒn/，近似「克奥恩」。",
+    "chain": "con = 圆锥（体）",
+    "origin_story": "(), ()",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "contra",
+   "kind": "prefix",
+   "meaning_zh": "反对，对抗",
+   "note": null,
+   "language": "Latin",
+   "examples": [
+    "contraband",
+    "contraception",
+    "contradict",
+    "contraindicate",
+    "contrast",
+    "contravene"
+   ],
+   "ipa": "kɒntrə",
+   "zh_approx": "克奥恩特尔厄",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "contra = 反对，对抗",
+    "image": "看到 contra 就想到「反对，对抗」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /kɒntrə/，近似「克奥恩特尔厄」。",
+    "chain": "contra = 反对，对抗",
+    "origin_story": null,
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "de",
+   "kind": "prefix",
+   "meaning_zh": "捆绑",
+   "note": "(), (), (), (), ()",
+   "language": "Greek",
+   "examples": [
+    "arthrodesis",
+    "asyndeton",
+    "desmid",
+    "desmitis",
+    "desmoid",
+    "desmoplasia",
+    "desmosome",
+    "diadem"
+   ],
+   "ipa": "d",
+   "zh_approx": "德",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "de = 捆绑",
+    "image": "看到 de 就想到「捆绑」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /d/，近似「德」。",
+    "chain": "de = 捆绑",
+    "origin_story": "(), (), (), (), ()",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "de",
+   "kind": "prefix",
+   "meaning_zh": "向下；离开；除去",
+   "note": null,
+   "language": "Latin",
+   "examples": [
+    "decay",
+    "decide",
+    "declare",
+    "decline",
+    "decompose",
+    "dedicate",
+    "deduce",
+    "defend"
+   ],
+   "ipa": "d",
+   "zh_approx": "德",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "de = 向下；离开；除去",
+    "image": "看到 de 就想到「向下；离开；除去」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /d/，近似「德」。",
+    "chain": "de = 向下；离开；除去",
+    "origin_story": null,
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "di",
+   "kind": "prefix",
+   "meaning_zh": "二",
+   "note": "()",
+   "language": "Greek",
+   "examples": [
+    "diatomic",
+    "dicot",
+    "digamy",
+    "diode",
+    "dipole"
+   ],
+   "ipa": "dɪ",
+   "zh_approx": "德伊",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "di = 二",
+    "image": "看到 di 就想到「二」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /dɪ/，近似「德伊」。",
+    "chain": "di = 二",
+    "origin_story": "()",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "dia",
+   "kind": "prefix",
+   "meaning_zh": "相隔；分开，从头到尾；通过",
+   "note": "()",
+   "language": "Greek",
+   "examples": [
+    "deacon",
+    "diagram",
+    "dialysis",
+    "diameter"
+   ],
+   "ipa": "dɪə",
+   "zh_approx": "德伊厄",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "dia = 相隔；分开，从头到尾；通过",
+    "image": "看到 dia 就想到「相隔；分开，从头到尾；通过」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /dɪə/，近似「德伊厄」。",
+    "chain": "dia = 相隔；分开，从头到尾；通过",
+    "origin_story": "()",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "eco",
+   "kind": "prefix",
+   "meaning_zh": "生态；经济",
+   "note": "()",
+   "language": "Greek",
+   "examples": [
+    "ecology",
+    "economics",
+    "economy",
+    "ecumenism"
+   ],
+   "ipa": "iːkəʊ",
+   "zh_approx": "伊克欧",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "eco = 生态；经济",
+    "image": "看到 eco 就想到「生态；经济」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /iːkəʊ/，近似「伊克欧」。",
+    "chain": "eco = 生态；经济",
+    "origin_story": "()",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "em",
+   "kind": "prefix",
+   "meaning_zh": "买到的东西；合算的购买",
+   "note": ", '",
+   "language": "Latin",
+   "examples": [
+    "adempt",
+    "ademption",
+    "exemption",
+    "preempt",
+    "redeem"
+   ],
+   "ipa": "ɛm",
+   "zh_approx": "埃姆",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "em = 买到的东西；合算的购买",
+    "image": "看到 em 就想到「买到的东西；合算的购买」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛm/，近似「埃姆」。",
+    "chain": "em = 买到的东西；合算的购买",
+    "origin_story": ", '",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "ex",
+   "kind": "prefix",
+   "meaning_zh": "在…外；向外；从…出来",
+   "note": null,
+   "language": "Latin",
+   "examples": [
+    "exclude",
+    "exist",
+    "exit",
+    "extend",
+    "extrude"
+   ],
+   "ipa": "ɛks",
+   "zh_approx": "埃克斯",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "ex = 在…外；向外；从…出来",
+    "image": "看到 ex 就想到「在…外；向外；从…出来」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛks/，近似「埃克斯」。",
+    "chain": "ex = 在…外；向外；从…出来",
+    "origin_story": null,
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "in",
+   "kind": "prefix",
+   "meaning_zh": "肌腱，力量",
+   "note": "(), ()",
+   "language": "Greek",
+   "examples": [
+    "inion",
+    "inotrope",
+    "inotropic"
+   ],
+   "ipa": "ɪn",
+   "zh_approx": "伊恩",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "in = 肌腱，力量",
+    "image": "看到 in 就想到「肌腱，力量」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪn/，近似「伊恩」。",
+    "chain": "in = 肌腱，力量",
+    "origin_story": "(), ()",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "in",
+   "kind": "prefix",
+   "meaning_zh": "",
+   "note": null,
+   "language": "Latin",
+   "examples": [
+    "illuminate",
+    "import",
+    "incur",
+    "intend",
+    "invite"
+   ],
+   "ipa": "ɪn",
+   "zh_approx": "伊恩",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "in = ",
+    "image": "看到 in 就想到「」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪn/，近似「伊恩」。",
+    "chain": "in = ",
+    "origin_story": null,
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "in",
+   "kind": "prefix",
+   "meaning_zh": "不，未（否定前缀）",
+   "note": null,
+   "language": "Latin",
+   "examples": [
+    "illicit",
+    "impossible",
+    "inimical",
+    "insane",
+    "irrational"
+   ],
+   "ipa": "ɪn",
+   "zh_approx": "伊恩",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "in = 不，未（否定前缀）",
+    "image": "看到 in 就想到「不，未（否定前缀）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪn/，近似「伊恩」。",
+    "chain": "in = 不，未（否定前缀）",
+    "origin_story": null,
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "inter",
+   "kind": "prefix",
+   "meaning_zh": "在…之中；在…之间",
+   "note": "(preposition)",
+   "language": "Latin",
+   "examples": [
+    "intercollegiate",
+    "intermission",
+    "intersection"
+   ],
+   "ipa": "ɪntɛr",
+   "zh_approx": "伊恩特埃尔",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "inter = 在…之中；在…之间",
+    "image": "看到 inter 就想到「在…之中；在…之间」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪntɛr/，近似「伊恩特埃尔」。",
+    "chain": "inter = 在…之中；在…之间",
+    "origin_story": "(preposition)",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "ob",
+   "kind": "prefix",
+   "meaning_zh": "反对，对抗",
+   "note": null,
+   "language": "Latin",
+   "examples": [
+    "obduracy",
+    "obdurate",
+    "obduration",
+    "obfuscate",
+    "oblique",
+    "obliquity",
+    "obstinate",
+    "obstreperous"
+   ],
+   "ipa": "ɒb",
+   "zh_approx": "奥布",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "ob = 反对，对抗",
+    "image": "看到 ob 就想到「反对，对抗」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɒb/，近似「奥布」。",
+    "chain": "ob = 反对，对抗",
+    "origin_story": null,
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "pass",
+   "kind": "prefix",
+   "meaning_zh": "少量；少许",
+   "note": "(), ()",
+   "language": "Greek",
+   "examples": [
+    "paste"
+   ],
+   "ipa": "pæss",
+   "zh_approx": "普艾斯斯",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "pass = 少量；少许",
+    "image": "看到 pass 就想到「少量；少许」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /pæss/，近似「普艾斯斯」。",
+    "chain": "pass = 少量；少许",
+    "origin_story": "(), ()",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "pass",
+   "kind": "prefix",
+   "meaning_zh": "速度；节奏，一步；台阶",
+   "note": null,
+   "language": "Latin",
+   "examples": [],
+   "ipa": "pæss",
+   "zh_approx": "普艾斯斯",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "pass = 速度；节奏，一步；台阶",
+    "image": "看到 pass 就想到「速度；节奏，一步；台阶」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /pæss/，近似「普艾斯斯」。",
+    "chain": "pass = 速度；节奏，一步；台阶",
+    "origin_story": null,
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "per",
+   "kind": "prefix",
+   "meaning_zh": "彻底地；穿过",
+   "note": null,
+   "language": "Latin",
+   "examples": [
+    "pellucid",
+    "perfection",
+    "permeate",
+    "pernicious",
+    "persistence",
+    "peruse",
+    "pervade"
+   ],
+   "ipa": "pɛr",
+   "zh_approx": "普埃尔",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "per = 彻底地；穿过",
+    "image": "看到 per 就想到「彻底地；穿过」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /pɛr/，近似「普埃尔」。",
+    "chain": "per = 彻底地；穿过",
+    "origin_story": null,
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "pre",
+   "kind": "prefix",
+   "meaning_zh": "以前；先前",
+   "note": null,
+   "language": "Latin",
+   "examples": [
+    "previous"
+   ],
+   "ipa": "pr",
+   "zh_approx": "普尔",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "pre = 以前；先前",
+    "image": "看到 pre 就想到「以前；先前」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /pr/，近似「普尔」。",
+    "chain": "pre = 以前；先前",
+    "origin_story": null,
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "pro",
+   "kind": "prefix",
+   "meaning_zh": "在…之前，在前面",
+   "note": "(), () \"former\", ()",
+   "language": "Greek",
+   "examples": [
+    "prologue",
+    "prostate",
+    "prow"
+   ],
+   "ipa": "proʊ",
+   "zh_approx": "普尔欧",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "pro = 在…之前，在前面",
+    "image": "看到 pro 就想到「在…之前，在前面」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /proʊ/，近似「普尔欧」。",
+    "chain": "pro = 在…之前，在前面",
+    "origin_story": "(), () \"former\", ()",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "pro",
+   "kind": "prefix",
+   "meaning_zh": "前锋",
+   "note": null,
+   "language": "Latin",
+   "examples": [
+    "procrastinate",
+    "propel",
+    "propulsion"
+   ],
+   "ipa": "proʊ",
+   "zh_approx": "普尔欧",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "pro = 前锋",
+    "image": "看到 pro 就想到「前锋」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /proʊ/，近似「普尔欧」。",
+    "chain": "pro = 前锋",
+    "origin_story": null,
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "re",
+   "kind": "prefix",
+   "meaning_zh": "再一次；又，背部；后部",
+   "note": "'",
+   "language": "Latin",
+   "examples": [
+    "recede",
+    "redact"
+   ],
+   "ipa": "r",
+   "zh_approx": "尔",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "re = 再一次；又，背部；后部",
+    "image": "看到 re 就想到「再一次；又，背部；后部」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /r/，近似「尔」。",
+    "chain": "re = 再一次；又，背部；后部",
+    "origin_story": "'",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "retro",
+   "kind": "prefix",
+   "meaning_zh": "向后的；倒退的，在后面；落后",
+   "note": "'",
+   "language": "Latin",
+   "examples": [
+    "retrograde",
+    "retrospective",
+    "retrovirus"
+   ],
+   "ipa": "rɛtroʊ",
+   "zh_approx": "尔埃特尔欧",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "retro = 向后的；倒退的，在后面；落后",
+    "image": "看到 retro 就想到「向后的；倒退的，在后面；落后」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /rɛtroʊ/，近似「尔埃特尔欧」。",
+    "chain": "retro = 向后的；倒退的，在后面；落后",
+    "origin_story": "'",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "sub",
+   "kind": "prefix",
+   "meaning_zh": "在下面；在下文",
+   "note": null,
+   "language": "Latin",
+   "examples": [
+    "submarine",
+    "submerge",
+    "suffix",
+    "suggest",
+    "support"
+   ],
+   "ipa": "sʌb",
+   "zh_approx": "斯阿布",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "sub = 在下面；在下文",
+    "image": "看到 sub 就想到「在下面；在下文」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /sʌb/，近似「斯阿布」。",
+    "chain": "sub = 在下面；在下文",
+    "origin_story": null,
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "super",
+   "kind": "prefix",
+   "meaning_zh": "在上方；在上文，结束",
+   "note": null,
+   "language": "Latin",
+   "examples": [
+    "insuperable",
+    "soprano",
+    "sovereign",
+    "summit",
+    "superable",
+    "superb",
+    "supercilious",
+    "supercomputer"
+   ],
+   "ipa": "sʌpɛr",
+   "zh_approx": "斯阿普埃尔",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "super = 在上方；在上文，结束",
+    "image": "看到 super 就想到「在上方；在上文，结束」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /sʌpɛr/，近似「斯阿普埃尔」。",
+    "chain": "super = 在上方；在上文，结束",
+    "origin_story": null,
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "syn",
+   "kind": "prefix",
+   "meaning_zh": "和，同",
+   "note": "()",
+   "language": "Greek",
+   "examples": [
+    "syllogism",
+    "symbol",
+    "symmetry",
+    "sympathy",
+    "synonym",
+    "synchronous",
+    "system"
+   ],
+   "ipa": "sɪn",
+   "zh_approx": "斯伊恩",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "syn = 和，同",
+    "image": "看到 syn 就想到「和，同」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /sɪn/，近似「斯伊恩」。",
+    "chain": "syn = 和，同",
+    "origin_story": "()",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "techn",
+   "kind": "prefix",
+   "meaning_zh": "艺术；美术，技能；技巧；本领",
+   "note": "(), (), (), ()",
+   "language": "Greek",
+   "examples": [
+    "architect",
+    "polytechnic",
+    "techne",
+    "technique",
+    "technocracy",
+    "technocrat",
+    "technogaianism",
+    "technology"
+   ],
+   "ipa": "tɛkn",
+   "zh_approx": "特埃克恩",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "techn = 艺术；美术，技能；技巧；本领",
+    "image": "看到 techn 就想到「艺术；美术，技能；技巧；本领」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /tɛkn/，近似「特埃克恩」。",
+    "chain": "techn = 艺术；美术，技能；技巧；本领",
+    "origin_story": "(), (), (), ()",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "tele",
+   "kind": "prefix",
+   "meaning_zh": "远处的；较远的，结束；末尾；尽头",
+   "note": "()",
+   "language": "Greek",
+   "examples": [
+    "telegram",
+    "telegraph",
+    "telemetry",
+    "telepathy",
+    "telephone",
+    "telescope",
+    "television"
+   ],
+   "ipa": "tɛl",
+   "zh_approx": "特埃勒",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "tele = 远处的；较远的，结束；末尾；尽头",
+    "image": "看到 tele 就想到「远处的；较远的，结束；末尾；尽头」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /tɛl/，近似「特埃勒」。",
+    "chain": "tele = 远处的；较远的，结束；末尾；尽头",
+    "origin_story": "()",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "tele",
+   "kind": "prefix",
+   "meaning_zh": "完整的；齐全的",
+   "note": "(), ()",
+   "language": "Greek",
+   "examples": [
+    "atelectasis",
+    "ateleiosis",
+    "atelophobia",
+    "teleology",
+    "telesis",
+    "toll"
+   ],
+   "ipa": "tɛl",
+   "zh_approx": "特埃勒",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "tele = 完整的；齐全的",
+    "image": "看到 tele 就想到「完整的；齐全的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /tɛl/，近似「特埃勒」。",
+    "chain": "tele = 完整的；齐全的",
+    "origin_story": "(), ()",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  }
+ ],
+ "suffixes": [
+  {
+   "form": "-able",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "可…的，能…的",
+   "note": "拉丁 -abilis，接动词表「能被…的」。",
+   "ipa": "æbl",
+   "zh_approx": "艾布尔",
+   "mnemonic": {
+    "core": "-able = 可…的，能…的",
+    "image": "看到 -able 就想到「可…的，能…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æbl/，近似「艾布尔」。",
+    "chain": "-able = 可…的，能…的",
+    "origin_story": "拉丁 -abilis，接动词表「能被…的」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ible",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "可…的，能…的",
+   "note": "-able 的异形，多接拉丁过去分词词干（visible, flexible）。",
+   "ipa": "ɪbl",
+   "zh_approx": "伊布尔",
+   "mnemonic": {
+    "core": "-ible = 可…的，能…的",
+    "image": "看到 -ible 就想到「可…的，能…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪbl/，近似「伊布尔」。",
+    "chain": "-ible = 可…的，能…的",
+    "origin_story": "-able 的异形，多接拉丁过去分词词干（visible, flexible）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-abulary",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "词尾拼合（非独立后缀）",
+   "note": "vocabulary = voc(叫 / 词) + -able + -ary，整体表「词语的集合」，应拆成 -able + -ary 理解。",
+   "ipa": "æbʌlæraɪ",
+   "zh_approx": "艾布阿勒艾尔艾",
+   "mnemonic": {
+    "core": "-abulary = 词尾拼合（非独立后缀）",
+    "image": "看到 -abulary 就想到「词尾拼合（非独立后缀）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æbʌlæraɪ/，近似「艾布阿勒艾尔艾」。",
+    "chain": "-abulary = 词尾拼合（非独立后缀）",
+    "origin_story": "vocabulary = voc(叫 / 词) + -able + -ary，整体表「词语的集合」，应拆成 -able + -ary 理解。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-acious",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "有…倾向的，充满…的",
+   "note": "拉丁 -ax/-acis + -ous，表动作强度；对应名词是 -acity（audacious → audacity）。",
+   "ipa": "æʃəs",
+   "zh_approx": "艾什厄斯",
+   "mnemonic": {
+    "core": "-acious = 有…倾向的，充满…的",
+    "image": "看到 -acious 就想到「有…倾向的，充满…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æʃəs/，近似「艾什厄斯」。",
+    "chain": "-acious = 有…倾向的，充满…的",
+    "origin_story": "拉丁 -ax/-acis + -ous，表动作强度；对应名词是 -acity（audacious → audacity）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-acity",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "…的性质 / 状态",
+   "note": "与 -acious 配对的抽象名词后缀。",
+   "ipa": "æsɪtaɪ",
+   "zh_approx": "艾斯伊特艾",
+   "mnemonic": {
+    "core": "-acity = …的性质 / 状态",
+    "image": "看到 -acity 就想到「…的性质 / 状态」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æsɪtaɪ/，近似「艾斯伊特艾」。",
+    "chain": "-acity = …的性质 / 状态",
+    "origin_story": "与 -acious 配对的抽象名词后缀。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-acle",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "器具；具有某种功能的事物",
+   "note": "拉丁 -aculum（工具 / 结果）。spectacle 供看的景象、miracle 令人惊叹之事、obstacle 挡在前面的东西。",
+   "ipa": "ækl",
+   "zh_approx": "艾克尔",
+   "mnemonic": {
+    "core": "-acle = 器具；具有某种功能的事物",
+    "image": "看到 -acle 就想到「器具；具有某种功能的事物」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ækl/，近似「艾克尔」。",
+    "chain": "-acle = 器具；具有某种功能的事物",
+    "origin_story": "拉丁 -aculum（工具 / 结果）。spectacle 供看的景象、miracle 令人惊叹之事、obstacle 挡在前面的东西。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-al",
+   "kind": "suffix",
+   "pos": "形容词 / 名词",
+   "meaning_zh": "…的；动作 / 结果",
+   "note": "拉丁 -alis：形容词「…的」（natural），接动词可成名词（arrival 到达）。",
+   "ipa": "æl",
+   "zh_approx": "艾勒",
+   "mnemonic": {
+    "core": "-al = …的；动作 / 结果",
+    "image": "看到 -al 就想到「…的；动作 / 结果」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æl/，近似「艾勒」。",
+    "chain": "-al = …的；动作 / 结果",
+    "origin_story": "拉丁 -alis：形容词「…的」（natural），接动词可成名词（arrival 到达）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ality",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "…的性质",
+   "note": "-al + -ity 复合。",
+   "ipa": "ælɪtaɪ",
+   "zh_approx": "艾勒伊特艾",
+   "mnemonic": {
+    "core": "-ality = …的性质",
+    "image": "看到 -ality 就想到「…的性质」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ælɪtaɪ/，近似「艾勒伊特艾」。",
+    "chain": "-ality = …的性质",
+    "origin_story": "-al + -ity 复合。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-als",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "…的（复数 / 名词化）",
+   "note": "-al + -s 的复数或名词化形式。",
+   "ipa": "æls",
+   "zh_approx": "艾勒斯",
+   "mnemonic": {
+    "core": "-als = …的（复数 / 名词化）",
+    "image": "看到 -als 就想到「…的（复数 / 名词化）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æls/，近似「艾勒斯」。",
+    "chain": "-als = …的（复数 / 名词化）",
+    "origin_story": "-al + -s 的复数或名词化形式。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-amin",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "词尾拼合（非独立后缀）",
+   "note": "vitamin = vit(生命) + amine(胺)，不是 -amin 后缀。",
+   "ipa": "æmɪn",
+   "zh_approx": "艾姆伊恩",
+   "mnemonic": {
+    "core": "-amin = 词尾拼合（非独立后缀）",
+    "image": "看到 -amin 就想到「词尾拼合（非独立后缀）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æmɪn/，近似「艾姆伊恩」。",
+    "chain": "-amin = 词尾拼合（非独立后缀）",
+    "origin_story": "vitamin = vit(生命) + amine(胺)，不是 -amin 后缀。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ance",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "动作、性质、状态",
+   "note": "拉丁 -antia；-ence 是它的异形，两者义同。",
+   "ipa": "æns",
+   "zh_approx": "艾恩斯",
+   "mnemonic": {
+    "core": "-ance = 动作、性质、状态",
+    "image": "看到 -ance 就想到「动作、性质、状态」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æns/，近似「艾恩斯」。",
+    "chain": "-ance = 动作、性质、状态",
+    "origin_story": "拉丁 -antia；-ence 是它的异形，两者义同。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-andum",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "应被…的事（被动将来）",
+   "note": "拉丁动名词 -andum；agenda「待办之事」、memorandum「须记住之事」同源。",
+   "ipa": "ændʌm",
+   "zh_approx": "艾恩德阿姆",
+   "mnemonic": {
+    "core": "-andum = 应被…的事（被动将来）",
+    "image": "看到 -andum 就想到「应被…的事（被动将来）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ændʌm/，近似「艾恩德阿姆」。",
+    "chain": "-andum = 应被…的事（被动将来）",
+    "origin_story": "拉丁动名词 -andum；agenda「待办之事」、memorandum「须记住之事」同源。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ant",
+   "kind": "suffix",
+   "pos": "形容词 / 名词",
+   "meaning_zh": "…的；做…的人 / 物",
+   "note": "拉丁 -ans/-antis；-ent 是异形。important、assistant。",
+   "ipa": "ænt",
+   "zh_approx": "艾恩特",
+   "mnemonic": {
+    "core": "-ant = …的；做…的人 / 物",
+    "image": "看到 -ant 就想到「…的；做…的人 / 物」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ænt/，近似「艾恩特」。",
+    "chain": "-ant = …的；做…的人 / 物",
+    "origin_story": "拉丁 -ans/-antis；-ent 是异形。important、assistant。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ate",
+   "kind": "suffix",
+   "pos": "动词 / 形容词",
+   "meaning_zh": "使…；具有…的",
+   "note": "拉丁 -atus。动词读 /eɪt/（create），形容词 / 名词读 /ət/（private）。",
+   "ipa": "æt",
+   "zh_approx": "艾特",
+   "mnemonic": {
+    "core": "-ate = 使…；具有…的",
+    "image": "看到 -ate 就想到「使…；具有…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æt/，近似「艾特」。",
+    "chain": "-ate = 使…；具有…的",
+    "origin_story": "拉丁 -atus。动词读 /eɪt/（create），形容词 / 名词读 /ət/（private）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-atile",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "能…的，倾向于…的",
+   "note": "拉丁 -atilis；versatile「可转向的 → 多才多艺的」。",
+   "ipa": "ætɪl",
+   "zh_approx": "艾特伊勒",
+   "mnemonic": {
+    "core": "-atile = 能…的，倾向于…的",
+    "image": "看到 -atile 就想到「能…的，倾向于…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ætɪl/，近似「艾特伊勒」。",
+    "chain": "-atile = 能…的，倾向于…的",
+    "origin_story": "拉丁 -atilis；versatile「可转向的 → 多才多艺的」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ation",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "动作、过程、结果",
+   "note": "-ate + -ion 复合，最高频名词后缀之一。",
+   "ipa": "æʃən",
+   "zh_approx": "艾什厄恩",
+   "mnemonic": {
+    "core": "-ation = 动作、过程、结果",
+    "image": "看到 -ation 就想到「动作、过程、结果」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /æʃən/，近似「艾什厄恩」。",
+    "chain": "-ation = 动作、过程、结果",
+    "origin_story": "-ate + -ion 复合，最高频名词后缀之一。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ator",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "做…的人 / 器具",
+   "note": "-ate + -or，表施动者或工具（spectator, generator）。",
+   "ipa": "ætɒr",
+   "zh_approx": "艾特奥尔",
+   "mnemonic": {
+    "core": "-ator = 做…的人 / 器具",
+    "image": "看到 -ator 就想到「做…的人 / 器具」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ætɒr/，近似「艾特奥尔」。",
+    "chain": "-ator = 做…的人 / 器具",
+    "origin_story": "-ate + -or，表施动者或工具（spectator, generator）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ctuate",
+   "kind": "suffix",
+   "pos": "动词",
+   "meaning_zh": "词尾拼合（非独立后缀）",
+   "note": "fluctuate = flu(流) + -ct + -ate，按 -ate「使…」理解。",
+   "ipa": "ktʌæt",
+   "zh_approx": "克特阿艾特",
+   "mnemonic": {
+    "core": "-ctuate = 词尾拼合（非独立后缀）",
+    "image": "看到 -ctuate 就想到「词尾拼合（非独立后缀）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ktʌæt/，近似「克特阿艾特」。",
+    "chain": "-ctuate = 词尾拼合（非独立后缀）",
+    "origin_story": "fluctuate = flu(流) + -ct + -ate，按 -ate「使…」理解。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-date",
+   "kind": "suffix",
+   "pos": "动词",
+   "meaning_zh": "词尾拼合（非独立后缀）",
+   "note": "mandate = man(手) + dare(给) + -ate，按 -ate 理解。",
+   "ipa": "dæt",
+   "zh_approx": "德艾特",
+   "mnemonic": {
+    "core": "-date = 词尾拼合（非独立后缀）",
+    "image": "看到 -date 就想到「词尾拼合（非独立后缀）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /dæt/，近似「德艾特」。",
+    "chain": "-date = 词尾拼合（非独立后缀）",
+    "origin_story": "mandate = man(手) + dare(给) + -ate，按 -ate 理解。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-der",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "词尾拼合（非独立后缀）",
+   "note": "gender = gen(种族 / 出生) + 拉丁派生词尾，不是独立后缀。",
+   "ipa": "dɛr",
+   "zh_approx": "德埃尔",
+   "mnemonic": {
+    "core": "-der = 词尾拼合（非独立后缀）",
+    "image": "看到 -der 就想到「词尾拼合（非独立后缀）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /dɛr/，近似「德埃尔」。",
+    "chain": "-der = 词尾拼合（非独立后缀）",
+    "origin_story": "gender = gen(种族 / 出生) + 拉丁派生词尾，不是独立后缀。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ement",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "动作、结果",
+   "note": "-ment 加连接元音 -e-。",
+   "ipa": "ɛmɛnt",
+   "zh_approx": "埃姆埃恩特",
+   "mnemonic": {
+    "core": "-ement = 动作、结果",
+    "image": "看到 -ement 就想到「动作、结果」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛmɛnt/，近似「埃姆埃恩特」。",
+    "chain": "-ement = 动作、结果",
+    "origin_story": "-ment 加连接元音 -e-。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ence",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "动作、性质、状态",
+   "note": "-ance 的异形（difference, patience）。",
+   "ipa": "ɛns",
+   "zh_approx": "埃恩斯",
+   "mnemonic": {
+    "core": "-ence = 动作、性质、状态",
+    "image": "看到 -ence 就想到「动作、性质、状态」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛns/，近似「埃恩斯」。",
+    "chain": "-ence = 动作、性质、状态",
+    "origin_story": "-ance 的异形（difference, patience）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ency",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "…的性质 / 状态",
+   "note": "-ent + -y 复合（frequency, efficiency）。",
+   "ipa": "ɛnsaɪ",
+   "zh_approx": "埃恩斯艾",
+   "mnemonic": {
+    "core": "-ency = …的性质 / 状态",
+    "image": "看到 -ency 就想到「…的性质 / 状态」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛnsaɪ/，近似「埃恩斯艾」。",
+    "chain": "-ency = …的性质 / 状态",
+    "origin_story": "-ent + -y 复合（frequency, efficiency）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ennial",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "…年的；每隔…年",
+   "note": "enn(年，拉丁 annus) + -ial。perennial 贯穿全年、biennial 两年一次；ann 在复合词里元音变为 enn。",
+   "ipa": "ɛnnɪæl",
+   "zh_approx": "埃恩恩伊艾勒",
+   "mnemonic": {
+    "core": "-ennial = …年的；每隔…年",
+    "image": "看到 -ennial 就想到「…年的；每隔…年」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛnnɪæl/，近似「埃恩恩伊艾勒」。",
+    "chain": "-ennial = …年的；每隔…年",
+    "origin_story": "enn(年，拉丁 annus) + -ial。perennial 贯穿全年、biennial 两年一次；ann 在复合词里元音变为 enn。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ent",
+   "kind": "suffix",
+   "pos": "形容词 / 名词",
+   "meaning_zh": "…的；做…的人 / 物",
+   "note": "-ant 的异形（different, student）。",
+   "ipa": "ɛnt",
+   "zh_approx": "埃恩特",
+   "mnemonic": {
+    "core": "-ent = …的；做…的人 / 物",
+    "image": "看到 -ent 就想到「…的；做…的人 / 物」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛnt/，近似「埃恩特」。",
+    "chain": "-ent = …的；做…的人 / 物",
+    "origin_story": "-ant 的异形（different, student）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ential",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "…的",
+   "note": "-ence / -ent + -ial 复合（essential, potential）。",
+   "ipa": "ɛnʃəl",
+   "zh_approx": "埃恩什厄勒",
+   "mnemonic": {
+    "core": "-ential = …的",
+    "image": "看到 -ential 就想到「…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛnʃəl/，近似「埃恩什厄勒」。",
+    "chain": "-ential = …的",
+    "origin_story": "-ence / -ent + -ial 复合（essential, potential）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-entific",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "词尾拼合（非独立后缀）",
+   "note": "scientific = science + -ic，按 -ic「…的」理解。",
+   "ipa": "ɛntɪfɪs",
+   "zh_approx": "埃恩特伊夫伊斯",
+   "mnemonic": {
+    "core": "-entific = 词尾拼合（非独立后缀）",
+    "image": "看到 -entific 就想到「词尾拼合（非独立后缀）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛntɪfɪs/，近似「埃恩特伊夫伊斯」。",
+    "chain": "-entific = 词尾拼合（非独立后缀）",
+    "origin_story": "scientific = science + -ic，按 -ic「…的」理解。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-entist",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "词尾拼合（非独立后缀）",
+   "note": "scientist = science + -ist，按 -ist「从事…的人」理解。",
+   "ipa": "ɛntɪst",
+   "zh_approx": "埃恩特伊斯特",
+   "mnemonic": {
+    "core": "-entist = 词尾拼合（非独立后缀）",
+    "image": "看到 -entist 就想到「词尾拼合（非独立后缀）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛntɪst/，近似「埃恩特伊斯特」。",
+    "chain": "-entist = 词尾拼合（非独立后缀）",
+    "origin_story": "scientist = science + -ist，按 -ist「从事…的人」理解。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-eo",
+   "kind": "suffix",
+   "pos": "—",
+   "meaning_zh": "词尾拼合（非独立后缀）",
+   "note": "多为拉丁词干元音与 -us/-um 连写，不是独立后缀。",
+   "ipa": "ɛoʊ",
+   "zh_approx": "埃欧",
+   "mnemonic": {
+    "core": "-eo = 词尾拼合（非独立后缀）",
+    "image": "看到 -eo 就想到「词尾拼合（非独立后缀）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛoʊ/，近似「埃欧」。",
+    "chain": "-eo = 词尾拼合（非独立后缀）",
+    "origin_story": "多为拉丁词干元音与 -us/-um 连写，不是独立后缀。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-er",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "做…的人 / 器具；比较级",
+   "note": "日耳曼 -er，最高频施事后缀（teacher, player）；也表比较级。",
+   "ipa": "ɛr",
+   "zh_approx": "埃尔",
+   "mnemonic": {
+    "core": "-er = 做…的人 / 器具；比较级",
+    "image": "看到 -er 就想到「做…的人 / 器具；比较级」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛr/，近似「埃尔」。",
+    "chain": "-er = 做…的人 / 器具；比较级",
+    "origin_story": "日耳曼 -er，最高频施事后缀（teacher, player）；也表比较级。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-eral",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "…的",
+   "note": "-al 加词干元音；general = gen(种族) + -al「整个族群的 → 普遍的」。",
+   "ipa": "ɛræl",
+   "zh_approx": "埃尔艾勒",
+   "mnemonic": {
+    "core": "-eral = …的",
+    "image": "看到 -eral 就想到「…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛræl/，近似「埃尔艾勒」。",
+    "chain": "-eral = …的",
+    "origin_story": "-al 加词干元音；general = gen(种族) + -al「整个族群的 → 普遍的」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-erate",
+   "kind": "suffix",
+   "pos": "动词",
+   "meaning_zh": "使…，做…",
+   "note": "-ate 动词后缀加词干元音（generate, operate）。",
+   "ipa": "ɛræt",
+   "zh_approx": "埃尔艾特",
+   "mnemonic": {
+    "core": "-erate = 使…，做…",
+    "image": "看到 -erate 就想到「使…，做…」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛræt/，近似「埃尔艾特」。",
+    "chain": "-erate = 使…，做…",
+    "origin_story": "-ate 动词后缀加词干元音（generate, operate）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-erator",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "做…的人 / 器具",
+   "note": "-ate + -or（generator 发电机 / 产生者）。",
+   "ipa": "ɛrætɒr",
+   "zh_approx": "埃尔艾特奥尔",
+   "mnemonic": {
+    "core": "-erator = 做…的人 / 器具",
+    "image": "看到 -erator 就想到「做…的人 / 器具」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛrætɒr/，近似「埃尔艾特奥尔」。",
+    "chain": "-erator = 做…的人 / 器具",
+    "origin_story": "-ate + -or（generator 发电机 / 产生者）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-erous",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "产生…的，充满…的",
+   "note": "-er + -ous 复合。",
+   "ipa": "ɛraʊs",
+   "zh_approx": "埃尔奥斯",
+   "mnemonic": {
+    "core": "-erous = 产生…的，充满…的",
+    "image": "看到 -erous 就想到「产生…的，充满…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛraʊs/，近似「埃尔奥斯」。",
+    "chain": "-erous = 产生…的，充满…的",
+    "origin_story": "-er + -ous 复合。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-etic",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "…的，与…有关的",
+   "note": "希腊 -etikos，与 -ic 同源（energetic, genetic）。",
+   "ipa": "ɛtɪs",
+   "zh_approx": "埃特伊斯",
+   "mnemonic": {
+    "core": "-etic = …的，与…有关的",
+    "image": "看到 -etic 就想到「…的，与…有关的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛtɪs/，近似「埃特伊斯」。",
+    "chain": "-etic = …的，与…有关的",
+    "origin_story": "希腊 -etikos，与 -ic 同源（energetic, genetic）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-fest",
+   "kind": "suffix",
+   "pos": "—",
+   "meaning_zh": "词尾拼合（非独立后缀）",
+   "note": "manifest = man(手) + festus(可抓住的 / 明显的)，此处不是后缀。",
+   "ipa": "fɛst",
+   "zh_approx": "夫埃斯特",
+   "mnemonic": {
+    "core": "-fest = 词尾拼合（非独立后缀）",
+    "image": "看到 -fest 就想到「词尾拼合（非独立后缀）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /fɛst/，近似「夫埃斯特」。",
+    "chain": "-fest = 词尾拼合（非独立后缀）",
+    "origin_story": "manifest = man(手) + festus(可抓住的 / 明显的)，此处不是后缀。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ial",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "…的",
+   "note": "-al 加连接元音 -i-（official, partial）。",
+   "ipa": "ɪæl",
+   "zh_approx": "伊艾勒",
+   "mnemonic": {
+    "core": "-ial = …的",
+    "image": "看到 -ial 就想到「…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪæl/，近似「伊艾勒」。",
+    "chain": "-ial = …的",
+    "origin_story": "-al 加连接元音 -i-（official, partial）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-iate",
+   "kind": "suffix",
+   "pos": "动词",
+   "meaning_zh": "使…，做…",
+   "note": "-ate 动词后缀加连接元音 -i-（appreciate, associate）。",
+   "ipa": "ɪæt",
+   "zh_approx": "伊艾特",
+   "mnemonic": {
+    "core": "-iate = 使…，做…",
+    "image": "看到 -iate 就想到「使…，做…」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪæt/，近似「伊艾特」。",
+    "chain": "-iate = 使…，做…",
+    "origin_story": "-ate 动词后缀加连接元音 -i-（appreciate, associate）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-iation",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "动作、过程、结果",
+   "note": "-iate + -ion（appreciation）。",
+   "ipa": "ɪæʃən",
+   "zh_approx": "伊艾什厄恩",
+   "mnemonic": {
+    "core": "-iation = 动作、过程、结果",
+    "image": "看到 -iation 就想到「动作、过程、结果」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪæʃən/，近似「伊艾什厄恩」。",
+    "chain": "-iation = 动作、过程、结果",
+    "origin_story": "-iate + -ion（appreciation）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ibility",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "可…性",
+   "note": "-ible + -ity（flexibility）。",
+   "ipa": "ɪbɪlɪtaɪ",
+   "zh_approx": "伊布伊勒伊特艾",
+   "mnemonic": {
+    "core": "-ibility = 可…性",
+    "image": "看到 -ibility 就想到「可…性」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪbɪlɪtaɪ/，近似「伊布伊勒伊特艾」。",
+    "chain": "-ibility = 可…性",
+    "origin_story": "-ible + -ity（flexibility）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ic",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "…的，与…有关的",
+   "note": "希腊 -ikos / 拉丁 -icus。",
+   "ipa": "ɪs",
+   "zh_approx": "伊斯",
+   "mnemonic": {
+    "core": "-ic = …的，与…有关的",
+    "image": "看到 -ic 就想到「…的，与…有关的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪs/，近似「伊斯」。",
+    "chain": "-ic = …的，与…有关的",
+    "origin_story": "希腊 -ikos / 拉丁 -icus。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ical",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "…的",
+   "note": "-ic + -al；常与 -ic 成对且语义有差（historic 有历史意义的 / historical 与历史有关的）。",
+   "ipa": "ɪkæl",
+   "zh_approx": "伊克艾勒",
+   "mnemonic": {
+    "core": "-ical = …的",
+    "image": "看到 -ical 就想到「…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪkæl/，近似「伊克艾勒」。",
+    "chain": "-ical = …的",
+    "origin_story": "-ic + -al；常与 -ic 成对且语义有差（historic 有历史意义的 / historical 与历史有关的）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-icle",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "小…；小器具",
+   "note": "拉丁指小 -iculus/-cula（particle 微粒, article 小关节）。",
+   "ipa": "ɪkl",
+   "zh_approx": "伊克尔",
+   "mnemonic": {
+    "core": "-icle = 小…；小器具",
+    "image": "看到 -icle 就想到「小…；小器具」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪkl/，近似「伊克尔」。",
+    "chain": "-icle = 小…；小器具",
+    "origin_story": "拉丁指小 -iculus/-cula（particle 微粒, article 小关节）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ics",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "…学；某领域的知识 / 实践",
+   "note": "希腊 -ika 中性复数（physics, economics, politics）。作学科名时谓语用单数。",
+   "ipa": "ɪks",
+   "zh_approx": "伊克斯",
+   "mnemonic": {
+    "core": "-ics = …学；某领域的知识 / 实践",
+    "image": "看到 -ics 就想到「…学；某领域的知识 / 实践」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪks/，近似「伊克斯」。",
+    "chain": "-ics = …学；某领域的知识 / 实践",
+    "origin_story": "希腊 -ika 中性复数（physics, economics, politics）。作学科名时谓语用单数。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-iculum",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "小…；小工具 / 场所",
+   "note": "拉丁指小 / 工具后缀 -iculum（curriculum 原义「跑道 / 课程」）。",
+   "ipa": "ɪkʌlʌm",
+   "zh_approx": "伊克阿勒阿姆",
+   "mnemonic": {
+    "core": "-iculum = 小…；小工具 / 场所",
+    "image": "看到 -iculum 就想到「小…；小工具 / 场所」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪkʌlʌm/，近似「伊克阿勒阿姆」。",
+    "chain": "-iculum = 小…；小工具 / 场所",
+    "origin_story": "拉丁指小 / 工具后缀 -iculum（curriculum 原义「跑道 / 课程」）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-id",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "…的，倾向于…的",
+   "note": "拉丁 -idus（rapid, valid）。",
+   "ipa": "ɪd",
+   "zh_approx": "伊德",
+   "mnemonic": {
+    "core": "-id = …的，倾向于…的",
+    "image": "看到 -id 就想到「…的，倾向于…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪd/，近似「伊德」。",
+    "chain": "-id = …的，倾向于…的",
+    "origin_story": "拉丁 -idus（rapid, valid）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ience",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "…的性质 / 状态",
+   "note": "-ient + -ce（experience, patience）。",
+   "ipa": "ins",
+   "zh_approx": "伊恩斯",
+   "mnemonic": {
+    "core": "-ience = …的性质 / 状态",
+    "image": "看到 -ience 就想到「…的性质 / 状态」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ins/，近似「伊恩斯」。",
+    "chain": "-ience = …的性质 / 状态",
+    "origin_story": "-ient + -ce（experience, patience）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ient",
+   "kind": "suffix",
+   "pos": "形容词 / 名词",
+   "meaning_zh": "…的；做…的人",
+   "note": "-ent 加连接元音 -i-（efficient, recipient）。",
+   "ipa": "int",
+   "zh_approx": "伊恩特",
+   "mnemonic": {
+    "core": "-ient = …的；做…的人",
+    "image": "看到 -ient 就想到「…的；做…的人」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /int/，近似「伊恩特」。",
+    "chain": "-ient = …的；做…的人",
+    "origin_story": "-ent 加连接元音 -i-（efficient, recipient）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-iety",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "…的性质 / 状态",
+   "note": "-ity 的异形（variety, society, propriety）。",
+   "ipa": "itaɪ",
+   "zh_approx": "伊特艾",
+   "mnemonic": {
+    "core": "-iety = …的性质 / 状态",
+    "image": "看到 -iety 就想到「…的性质 / 状态」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /itaɪ/，近似「伊特艾」。",
+    "chain": "-iety = …的性质 / 状态",
+    "origin_story": "-ity 的异形（variety, society, propriety）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ile",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "能…的，属于…的",
+   "note": "拉丁 -ilis；与 -able 部分重叠（flexile, fertile）。",
+   "ipa": "ɪl",
+   "zh_approx": "伊勒",
+   "mnemonic": {
+    "core": "-ile = 能…的，属于…的",
+    "image": "看到 -ile 就想到「能…的，属于…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪl/，近似「伊勒」。",
+    "chain": "-ile = 能…的，属于…的",
+    "origin_story": "拉丁 -ilis；与 -able 部分重叠（flexile, fertile）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ility",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "…的性质 / 状态",
+   "note": "-ile / -able + -ity（ability, stability）。",
+   "ipa": "ɪlɪtaɪ",
+   "zh_approx": "伊勒伊特艾",
+   "mnemonic": {
+    "core": "-ility = …的性质 / 状态",
+    "image": "看到 -ility 就想到「…的性质 / 状态」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪlɪtaɪ/，近似「伊勒伊特艾」。",
+    "chain": "-ility = …的性质 / 状态",
+    "origin_story": "-ile / -able + -ity（ability, stability）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-imen",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "结果、物；供…之用的东西",
+   "note": "拉丁 -imen；specimen「拿来给你看的东西 = 标本」。",
+   "ipa": "ɪmɛn",
+   "zh_approx": "伊姆埃恩",
+   "mnemonic": {
+    "core": "-imen = 结果、物；供…之用的东西",
+    "image": "看到 -imen 就想到「结果、物；供…之用的东西」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪmɛn/，近似「伊姆埃恩」。",
+    "chain": "-imen = 结果、物；供…之用的东西",
+    "origin_story": "拉丁 -imen；specimen「拿来给你看的东西 = 标本」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-iment",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "动作、结果、手段",
+   "note": "-ment 加连接元音 -i-（experiment, monument）。",
+   "ipa": "ɪmɛnt",
+   "zh_approx": "伊姆埃恩特",
+   "mnemonic": {
+    "core": "-iment = 动作、结果、手段",
+    "image": "看到 -iment 就想到「动作、结果、手段」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪmɛnt/，近似「伊姆埃恩特」。",
+    "chain": "-iment = 动作、结果、手段",
+    "origin_story": "-ment 加连接元音 -i-（experiment, monument）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-imental",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "…的",
+   "note": "-iment + -al（experimental）。",
+   "ipa": "ɪmɛntæl",
+   "zh_approx": "伊姆埃恩特艾勒",
+   "mnemonic": {
+    "core": "-imental = …的",
+    "image": "看到 -imental 就想到「…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪmɛntæl/，近似「伊姆埃恩特艾勒」。",
+    "chain": "-imental = …的",
+    "origin_story": "-iment + -al（experimental）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-iology",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "…学",
+   "note": "-io- + -logy，与 -ology 同义（physiology）。",
+   "ipa": "ɪɒlɒdʒaɪ",
+   "zh_approx": "伊奥勒奥吉艾",
+   "mnemonic": {
+    "core": "-iology = …学",
+    "image": "看到 -iology 就想到「…学」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪɒlɒdʒaɪ/，近似「伊奥勒奥吉艾」。",
+    "chain": "-iology = …学",
+    "origin_story": "-io- + -logy，与 -ology 同义（physiology）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ion",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "动作、状态、结果",
+   "note": "拉丁 -io/-ionis，最常见名词后缀。",
+   "ipa": "ɪɒn",
+   "zh_approx": "伊奥恩",
+   "mnemonic": {
+    "core": "-ion = 动作、状态、结果",
+    "image": "看到 -ion 就想到「动作、状态、结果」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪɒn/，近似「伊奥恩」。",
+    "chain": "-ion = 动作、状态、结果",
+    "origin_story": "拉丁 -io/-ionis，最常见名词后缀。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ionary",
+   "kind": "suffix",
+   "pos": "形容词 / 名词",
+   "meaning_zh": "与…有关的（人 / 物）",
+   "note": "-ion + -ary（diction / dictionary）。",
+   "ipa": "ɪɒnæraɪ",
+   "zh_approx": "伊奥恩艾尔艾",
+   "mnemonic": {
+    "core": "-ionary = 与…有关的（人 / 物）",
+    "image": "看到 -ionary 就想到「与…有关的（人 / 物）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪɒnæraɪ/，近似「伊奥恩艾尔艾」。",
+    "chain": "-ionary = 与…有关的（人 / 物）",
+    "origin_story": "-ion + -ary（diction / dictionary）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ious",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "具有…的",
+   "note": "-ous 加连接元音 -i-（curious, various）。",
+   "ipa": "ɪaʊs",
+   "zh_approx": "伊奥斯",
+   "mnemonic": {
+    "core": "-ious = 具有…的",
+    "image": "看到 -ious 就想到「具有…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪaʊs/，近似「伊奥斯」。",
+    "chain": "-ious = 具有…的",
+    "origin_story": "-ous 加连接元音 -i-（curious, various）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ism",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "主义、学说、行为特征",
+   "note": "希腊 -ismos（tourism, criticism）。",
+   "ipa": "ɪsm",
+   "zh_approx": "伊斯姆",
+   "mnemonic": {
+    "core": "-ism = 主义、学说、行为特征",
+    "image": "看到 -ism 就想到「主义、学说、行为特征」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪsm/，近似「伊斯姆」。",
+    "chain": "-ism = 主义、学说、行为特征",
+    "origin_story": "希腊 -ismos（tourism, criticism）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ist",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "…主义者；从事…的人",
+   "note": "希腊 -istes（scientist, economist）。",
+   "ipa": "ɪst",
+   "zh_approx": "伊斯特",
+   "mnemonic": {
+    "core": "-ist = …主义者；从事…的人",
+    "image": "看到 -ist 就想到「…主义者；从事…的人」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪst/，近似「伊斯特」。",
+    "chain": "-ist = …主义者；从事…的人",
+    "origin_story": "希腊 -istes（scientist, economist）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-istic",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "…主义的，…的",
+   "note": "-ist + -ic（realistic）。",
+   "ipa": "ɪstɪs",
+   "zh_approx": "伊斯特伊斯",
+   "mnemonic": {
+    "core": "-istic = …主义的，…的",
+    "image": "看到 -istic 就想到「…主义的，…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪstɪs/，近似「伊斯特伊斯」。",
+    "chain": "-istic = …主义的，…的",
+    "origin_story": "-ist + -ic（realistic）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ition",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "动作、过程、结果",
+   "note": "-it(过去分词词干) + -ion（composition, definition）。",
+   "ipa": "ɪʃən",
+   "zh_approx": "伊什厄恩",
+   "mnemonic": {
+    "core": "-ition = 动作、过程、结果",
+    "image": "看到 -ition 就想到「动作、过程、结果」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪʃən/，近似「伊什厄恩」。",
+    "chain": "-ition = 动作、过程、结果",
+    "origin_story": "-it(过去分词词干) + -ion（composition, definition）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-itive",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "有…倾向的",
+   "note": "-it + -ive（competitive, sensitive）。",
+   "ipa": "ɪtɪv",
+   "zh_approx": "伊特伊弗",
+   "mnemonic": {
+    "core": "-itive = 有…倾向的",
+    "image": "看到 -itive 就想到「有…倾向的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪtɪv/，近似「伊特伊弗」。",
+    "chain": "-itive = 有…倾向的",
+    "origin_story": "-it + -ive（competitive, sensitive）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-itor",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "做…的人 / 器具",
+   "note": "-it + -or（competitor, editor）。",
+   "ipa": "ɪtɒr",
+   "zh_approx": "伊特奥尔",
+   "mnemonic": {
+    "core": "-itor = 做…的人 / 器具",
+    "image": "看到 -itor 就想到「做…的人 / 器具」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪtɒr/，近似「伊特奥尔」。",
+    "chain": "-itor = 做…的人 / 器具",
+    "origin_story": "-it + -or（competitor, editor）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-itorium",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "做…的场所",
+   "note": "拉丁 -torium/-orium 表「场所 / 工具」；auditorium「听的地方 = 礼堂」。",
+   "ipa": "ɪtɒrɪʌm",
+   "zh_approx": "伊特奥尔伊阿姆",
+   "mnemonic": {
+    "core": "-itorium = 做…的场所",
+    "image": "看到 -itorium 就想到「做…的场所」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪtɒrɪʌm/，近似「伊特奥尔伊阿姆」。",
+    "chain": "-itorium = 做…的场所",
+    "origin_story": "拉丁 -torium/-orium 表「场所 / 工具」；auditorium「听的地方 = 礼堂」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ius",
+   "kind": "suffix",
+   "pos": "名词 / 形容词",
+   "meaning_zh": "拉丁词尾（非独立后缀）",
+   "note": "拉丁 -ius 表「属于…」，英语里不产新词。",
+   "ipa": "ɪʌs",
+   "zh_approx": "伊阿斯",
+   "mnemonic": {
+    "core": "-ius = 拉丁词尾（非独立后缀）",
+    "image": "看到 -ius 就想到「拉丁词尾（非独立后缀）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪʌs/，近似「伊阿斯」。",
+    "chain": "-ius = 拉丁词尾（非独立后缀）",
+    "origin_story": "拉丁 -ius 表「属于…」，英语里不产新词。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ive",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "有…倾向的",
+   "note": "拉丁 -ivus（active, perspective）。",
+   "ipa": "ɪv",
+   "zh_approx": "伊弗",
+   "mnemonic": {
+    "core": "-ive = 有…倾向的",
+    "image": "看到 -ive 就想到「有…倾向的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪv/，近似「伊弗」。",
+    "chain": "-ive = 有…倾向的",
+    "origin_story": "拉丁 -ivus（active, perspective）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-iversary",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "词尾拼合（非独立后缀）",
+   "note": "anniversary = ann(年) + vers(转) + -ary，本义「年份转回来的那一天」。",
+   "ipa": "ɪvɛrsæraɪ",
+   "zh_approx": "伊弗埃尔斯艾尔艾",
+   "mnemonic": {
+    "core": "-iversary = 词尾拼合（非独立后缀）",
+    "image": "看到 -iversary 就想到「词尾拼合（非独立后缀）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪvɛrsæraɪ/，近似「伊弗埃尔斯艾尔艾」。",
+    "chain": "-iversary = 词尾拼合（非独立后缀）",
+    "origin_story": "anniversary = ann(年) + vers(转) + -ary，本义「年份转回来的那一天」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ize",
+   "kind": "suffix",
+   "pos": "动词",
+   "meaning_zh": "使…化，变成…",
+   "note": "希腊 -izein（modernize, realize）。",
+   "ipa": "ɪz",
+   "zh_approx": "伊兹",
+   "mnemonic": {
+    "core": "-ize = 使…化，变成…",
+    "image": "看到 -ize 就想到「使…化，变成…」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪz/，近似「伊兹」。",
+    "chain": "-ize = 使…化，变成…",
+    "origin_story": "希腊 -izein（modernize, realize）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-le",
+   "kind": "suffix",
+   "pos": "名词 / 动词",
+   "meaning_zh": "小…；工具 / 反复动作",
+   "note": "拉丁 -ulus/-ula 弱化而来；也表反复动作（sparkle）。",
+   "ipa": "l",
+   "zh_approx": "勒",
+   "mnemonic": {
+    "core": "-le = 小…；工具 / 反复动作",
+    "image": "看到 -le 就想到「小…；工具 / 反复动作」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /l/，近似「勒」。",
+    "chain": "-le = 小…；工具 / 反复动作",
+    "origin_story": "拉丁 -ulus/-ula 弱化而来；也表反复动作（sparkle）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-lish",
+   "kind": "suffix",
+   "pos": "动词",
+   "meaning_zh": "词尾拼合（非独立后缀）",
+   "note": "establish = e- + stab(站) + 古法语动词词尾，按「使站稳 → 建立」理解。",
+   "ipa": "lɪʃ",
+   "zh_approx": "勒伊什",
+   "mnemonic": {
+    "core": "-lish = 词尾拼合（非独立后缀）",
+    "image": "看到 -lish 就想到「词尾拼合（非独立后缀）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /lɪʃ/，近似「勒伊什」。",
+    "chain": "-lish = 词尾拼合（非独立后缀）",
+    "origin_story": "establish = e- + stab(站) + 古法语动词词尾，按「使站稳 → 建立」理解。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-logy",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "…学，…论",
+   "note": "希腊 logos「言说 / 学问」（biology, technology）。",
+   "ipa": "lɒdʒaɪ",
+   "zh_approx": "勒奥吉艾",
+   "mnemonic": {
+    "core": "-logy = …学，…论",
+    "image": "看到 -logy 就想到「…学，…论」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /lɒdʒaɪ/，近似「勒奥吉艾」。",
+    "chain": "-logy = …学，…论",
+    "origin_story": "希腊 logos「言说 / 学问」（biology, technology）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-nant",
+   "kind": "suffix",
+   "pos": "形容词 / 名词",
+   "meaning_zh": "…的；做…的人",
+   "note": "-ant 加词干 n（dominant, prominent）。",
+   "ipa": "nænt",
+   "zh_approx": "恩艾恩特",
+   "mnemonic": {
+    "core": "-nant = …的；做…的人",
+    "image": "看到 -nant 就想到「…的；做…的人」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /nænt/，近似「恩艾恩特」。",
+    "chain": "-nant = …的；做…的人",
+    "origin_story": "-ant 加词干 n（dominant, prominent）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ner",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "词尾拼合（非独立后缀）",
+   "note": "词根 + -er 的拼合，按 -er「人 / 物」理解。",
+   "ipa": "nɛr",
+   "zh_approx": "恩埃尔",
+   "mnemonic": {
+    "core": "-ner = 词尾拼合（非独立后缀）",
+    "image": "看到 -ner 就想到「词尾拼合（非独立后缀）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /nɛr/，近似「恩埃尔」。",
+    "chain": "-ner = 词尾拼合（非独立后缀）",
+    "origin_story": "词根 + -er 的拼合，按 -er「人 / 物」理解。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-nomy",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "…法则 / 管理；学科",
+   "note": "希腊 nomos「法则」。economy「治家之法」、astronomy「星体运行规律」。",
+   "ipa": "nɒmaɪ",
+   "zh_approx": "恩奥姆艾",
+   "mnemonic": {
+    "core": "-nomy = …法则 / 管理；学科",
+    "image": "看到 -nomy 就想到「…法则 / 管理；学科」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /nɒmaɪ/，近似「恩奥姆艾」。",
+    "chain": "-nomy = …法则 / 管理；学科",
+    "origin_story": "希腊 nomos「法则」。economy「治家之法」、astronomy「星体运行规律」。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ological",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "…学的",
+   "note": "-ology + -ical（ecological）。",
+   "ipa": "ɒlɒdʒɪkæl",
+   "zh_approx": "奥勒奥吉伊克艾勒",
+   "mnemonic": {
+    "core": "-ological = …学的",
+    "image": "看到 -ological 就想到「…学的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɒlɒdʒɪkæl/，近似「奥勒奥吉伊克艾勒」。",
+    "chain": "-ological = …学的",
+    "origin_story": "-ology + -ical（ecological）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ology",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "…学",
+   "note": "-o- + -logy（ecology, psychology）。",
+   "ipa": "ɒlɒdʒaɪ",
+   "zh_approx": "奥勒奥吉艾",
+   "mnemonic": {
+    "core": "-ology = …学",
+    "image": "看到 -ology 就想到「…学」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɒlɒdʒaɪ/，近似「奥勒奥吉艾」。",
+    "chain": "-ology = …学",
+    "origin_story": "-o- + -logy（ecology, psychology）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-or",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "做…的人 / 器具",
+   "note": "拉丁 -or，与 -er 同义（professor, tractor）。",
+   "ipa": "ɒr",
+   "zh_approx": "奥尔",
+   "mnemonic": {
+    "core": "-or = 做…的人 / 器具",
+    "image": "看到 -or 就想到「做…的人 / 器具」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɒr/，近似「奥尔」。",
+    "chain": "-or = 做…的人 / 器具",
+    "origin_story": "拉丁 -or，与 -er 同义（professor, tractor）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ory",
+   "kind": "suffix",
+   "pos": "形容词 / 名词",
+   "meaning_zh": "与…有关的；…的场所",
+   "note": "拉丁 -orius/-orium；中性名词化后表「场所」（laboratory, dormitory）。",
+   "ipa": "ɒraɪ",
+   "zh_approx": "奥尔艾",
+   "mnemonic": {
+    "core": "-ory = 与…有关的；…的场所",
+    "image": "看到 -ory 就想到「与…有关的；…的场所」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɒraɪ/，近似「奥尔艾」。",
+    "chain": "-ory = 与…有关的；…的场所",
+    "origin_story": "拉丁 -orius/-orium；中性名词化后表「场所」（laboratory, dormitory）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ous",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "具有…的，充满…的",
+   "note": "拉丁 -osus（famous, dangerous）。",
+   "ipa": "aʊs",
+   "zh_approx": "奥斯",
+   "mnemonic": {
+    "core": "-ous = 具有…的，充满…的",
+    "image": "看到 -ous 就想到「具有…的，充满…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /aʊs/，近似「奥斯」。",
+    "chain": "-ous = 具有…的，充满…的",
+    "origin_story": "拉丁 -osus（famous, dangerous）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-script",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "词根「写」（非后缀）",
+   "note": "manuscript = manu(手) + scrib/script(写)，此处是词根，不是后缀。",
+   "ipa": "skrɪpt",
+   "zh_approx": "斯克尔伊普特",
+   "mnemonic": {
+    "core": "-script = 词根「写」（非后缀）",
+    "image": "看到 -script 就想到「词根「写」（非后缀）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /skrɪpt/，近似「斯克尔伊普特」。",
+    "chain": "-script = 词根「写」（非后缀）",
+    "origin_story": "manuscript = manu(手) + scrib/script(写)，此处是词根，不是后缀。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-tion",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "动作、状态、结果",
+   "note": "-ion 接 -t 词干的最常见形式（attention, information）。",
+   "ipa": "ʃən",
+   "zh_approx": "什厄恩",
+   "mnemonic": {
+    "core": "-tion = 动作、状态、结果",
+    "image": "看到 -tion 就想到「动作、状态、结果」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ʃən/，近似「什厄恩」。",
+    "chain": "-tion = 动作、状态、结果",
+    "origin_story": "-ion 接 -t 词干的最常见形式（attention, information）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-tive",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "有…倾向的",
+   "note": "-t + -ive（active, effective）。",
+   "ipa": "tɪv",
+   "zh_approx": "特伊弗",
+   "mnemonic": {
+    "core": "-tive = 有…倾向的",
+    "image": "看到 -tive 就想到「有…倾向的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /tɪv/，近似「特伊弗」。",
+    "chain": "-tive = 有…倾向的",
+    "origin_story": "-t + -ive（active, effective）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ture",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "动作、结果",
+   "note": "拉丁 -tura，与 -ure 同源（culture, structure）。",
+   "ipa": "tʌr",
+   "zh_approx": "特阿尔",
+   "mnemonic": {
+    "core": "-ture = 动作、结果",
+    "image": "看到 -ture 就想到「动作、结果」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /tʌr/，近似「特阿尔」。",
+    "chain": "-ture = 动作、结果",
+    "origin_story": "拉丁 -tura，与 -ure 同源（culture, structure）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ual",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "…的",
+   "note": "-al 加连接元音 -u-（actual, annual, visual）。",
+   "ipa": "ʌæl",
+   "zh_approx": "阿艾勒",
+   "mnemonic": {
+    "core": "-ual = …的",
+    "image": "看到 -ual 就想到「…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ʌæl/，近似「阿艾勒」。",
+    "chain": "-ual = …的",
+    "origin_story": "-al 加连接元音 -u-（actual, annual, visual）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-uine",
+   "kind": "suffix",
+   "pos": "—",
+   "meaning_zh": "词尾拼合（非独立后缀）",
+   "note": "genuine 等为拉丁词干 + -us 的变形，不是独立后缀。",
+   "ipa": "ʌɪn",
+   "zh_approx": "阿伊恩",
+   "mnemonic": {
+    "core": "-uine = 词尾拼合（非独立后缀）",
+    "image": "看到 -uine 就想到「词尾拼合（非独立后缀）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ʌɪn/，近似「阿伊恩」。",
+    "chain": "-uine = 词尾拼合（非独立后缀）",
+    "origin_story": "genuine 等为拉丁词干 + -us 的变形，不是独立后缀。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-uity",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "…的性质 / 状态",
+   "note": "-ity 加连接元音 -u-（continuity, ambiguity）。",
+   "ipa": "ʌɪtaɪ",
+   "zh_approx": "阿伊特艾",
+   "mnemonic": {
+    "core": "-uity = …的性质 / 状态",
+    "image": "看到 -uity 就想到「…的性质 / 状态」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ʌɪtaɪ/，近似「阿伊特艾」。",
+    "chain": "-uity = …的性质 / 状态",
+    "origin_story": "-ity 加连接元音 -u-（continuity, ambiguity）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ulate",
+   "kind": "suffix",
+   "pos": "动词",
+   "meaning_zh": "使…，做…",
+   "note": "-ate 动词后缀加 -ul- 词干（calculate, regulate）。",
+   "ipa": "ʌlæt",
+   "zh_approx": "阿勒艾特",
+   "mnemonic": {
+    "core": "-ulate = 使…，做…",
+    "image": "看到 -ulate 就想到「使…，做…」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ʌlæt/，近似「阿勒艾特」。",
+    "chain": "-ulate = 使…，做…",
+    "origin_story": "-ate 动词后缀加 -ul- 词干（calculate, regulate）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ulous",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "有…倾向的，多…的",
+   "note": "拉丁 -ulosus（fabulous, meticulous）。",
+   "ipa": "ʌlaʊs",
+   "zh_approx": "阿勒奥斯",
+   "mnemonic": {
+    "core": "-ulous = 有…倾向的，多…的",
+    "image": "看到 -ulous 就想到「有…倾向的，多…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ʌlaʊs/，近似「阿勒奥斯」。",
+    "chain": "-ulous = 有…倾向的，多…的",
+    "origin_story": "拉丁 -ulosus（fabulous, meticulous）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-uous",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "有…倾向的，充满…的",
+   "note": "拉丁 -uus + -ous（conspicuous 完全看得见 → 显眼）。",
+   "ipa": "ʌaʊs",
+   "zh_approx": "阿奥斯",
+   "mnemonic": {
+    "core": "-uous = 有…倾向的，充满…的",
+    "image": "看到 -uous 就想到「有…倾向的，充满…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ʌaʊs/，近似「阿奥斯」。",
+    "chain": "-uous = 有…倾向的，充满…的",
+    "origin_story": "拉丁 -uus + -ous（conspicuous 完全看得见 → 显眼）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ural",
+   "kind": "suffix",
+   "pos": "形容词",
+   "meaning_zh": "…的",
+   "note": "-al 加连接元音（natural, cultural）。",
+   "ipa": "ʌræl",
+   "zh_approx": "阿尔艾勒",
+   "mnemonic": {
+    "core": "-ural = …的",
+    "image": "看到 -ural 就想到「…的」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ʌræl/，近似「阿尔艾勒」。",
+    "chain": "-ural = …的",
+    "origin_story": "-al 加连接元音（natural, cultural）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-ure",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "动作、结果、状态",
+   "note": "拉丁 -ura（pressure, failure, exposure）。",
+   "ipa": "ʌr",
+   "zh_approx": "阿尔",
+   "mnemonic": {
+    "core": "-ure = 动作、结果、状态",
+    "image": "看到 -ure 就想到「动作、结果、状态」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ʌr/，近似「阿尔」。",
+    "chain": "-ure = 动作、结果、状态",
+    "origin_story": "拉丁 -ura（pressure, failure, exposure）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-us",
+   "kind": "suffix",
+   "pos": "名词 / 形容词",
+   "meaning_zh": "拉丁名词 / 形容词词尾",
+   "note": "表「属于…、具有…」，英语里不是活后缀。",
+   "ipa": "ʌs",
+   "zh_approx": "阿斯",
+   "mnemonic": {
+    "core": "-us = 拉丁名词 / 形容词词尾",
+    "image": "看到 -us 就想到「拉丁名词 / 形容词词尾」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ʌs/，近似「阿斯」。",
+    "chain": "-us = 拉丁名词 / 形容词词尾",
+    "origin_story": "表「属于…、具有…」，英语里不是活后缀。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-visual",
+   "kind": "suffix",
+   "pos": "—",
+   "meaning_zh": "独立词「视觉的」（非后缀）",
+   "note": "audiovisual = audio(听) + visual(看)，此处是独立词。",
+   "ipa": "vɪsʌæl",
+   "zh_approx": "弗伊斯阿艾勒",
+   "mnemonic": {
+    "core": "-visual = 独立词「视觉的」（非后缀）",
+    "image": "看到 -visual 就想到「独立词「视觉的」（非后缀）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /vɪsʌæl/，近似「弗伊斯阿艾勒」。",
+    "chain": "-visual = 独立词「视觉的」（非后缀）",
+    "origin_story": "audiovisual = audio(听) + visual(看)，此处是独立词。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-y",
+   "kind": "suffix",
+   "pos": "形容词 / 名词",
+   "meaning_zh": "…的；…的状态 / 结果",
+   "note": "多义后缀：形容词「有…的」（rainy），名词「性质 / 结果」（discovery, difficulty）。",
+   "ipa": "waɪ",
+   "zh_approx": "乌艾",
+   "mnemonic": {
+    "core": "-y = …的；…的状态 / 结果",
+    "image": "看到 -y 就想到「…的；…的状态 / 结果」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /waɪ/，近似「乌艾」。",
+    "chain": "-y = …的；…的状态 / 结果",
+    "origin_story": "多义后缀：形容词「有…的」（rainy），名词「性质 / 结果」（discovery, difficulty）。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "system",
+   "kind": "suffix",
+   "pos": "名词",
+   "meaning_zh": "独立词「系统」（非后缀）",
+   "note": "ecosystem = eco(生态) + system(系统)，此处是独立词。",
+   "ipa": "sɪstɛm",
+   "zh_approx": "斯伊斯特埃姆",
+   "mnemonic": {
+    "core": "system = 独立词「系统」（非后缀）",
+    "image": "看到 system 就想到「独立词「系统」（非后缀）」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /sɪstɛm/，近似「斯伊斯特埃姆」。",
+    "chain": "system = 独立词「系统」（非后缀）",
+    "origin_story": "ecosystem = eco(生态) + system(系统)，此处是独立词。",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   },
+   "quality": "project"
+  },
+  {
+   "form": "-der",
+   "kind": "suffix",
+   "meaning_zh": "皮肤",
+   "note": "(), ()",
+   "language": "Greek",
+   "examples": [
+    "Dermaptera",
+    "dermatology",
+    "dermis",
+    "ectoderm",
+    "endoderm",
+    "epidermis",
+    "hypodermic",
+    "mesoderm"
+   ],
+   "ipa": "dɛr",
+   "zh_approx": "德埃尔",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "der = 皮肤",
+    "image": "看到 der 就想到「皮肤」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /dɛr/，近似「德埃尔」。",
+    "chain": "der = 皮肤",
+    "origin_story": "(), ()",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "-eo",
+   "kind": "suffix",
+   "meaning_zh": "黎明；拂晓，东方；东部",
+   "note": ", ()",
+   "language": "Greek",
+   "examples": [
+    "Eocene",
+    "eohippus",
+    "Eosentomon",
+    "eosin",
+    "eosinophil",
+    "eosinophilic",
+    "Eozoic"
+   ],
+   "ipa": "ɛoʊ",
+   "zh_approx": "埃欧",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "eo = 黎明；拂晓，东方；东部",
+    "image": "看到 eo 就想到「黎明；拂晓，东方；东部」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɛoʊ/，近似「埃欧」。",
+    "chain": "eo = 黎明；拂晓，东方；东部",
+    "origin_story": ", ()",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "-id",
+   "kind": "suffix",
+   "meaning_zh": "形状；外形，类型；形式；形状，图片；图画；照片",
+   "note": "(), ()",
+   "language": "Greek",
+   "examples": [
+    "eidetic",
+    "eidolon",
+    "eidos",
+    "idolater",
+    "idolatry",
+    "idyll",
+    "idyllic",
+    "idyllist"
+   ],
+   "ipa": "ɪd",
+   "zh_approx": "伊德",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "id = 形状；外形，类型；形式；形状，图片；图画；照片",
+    "image": "看到 id 就想到「形状；外形，类型；形式；形状，图片；图画；照片」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɪd/，近似「伊德」。",
+    "chain": "id = 形状；外形，类型；形式；形状，图片；图画；照片",
+    "origin_story": "(), ()",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "-or",
+   "kind": "suffix",
+   "meaning_zh": "山；高山",
+   "note": "(),",
+   "language": "Greek",
+   "examples": [
+    "Oread",
+    "orogenesis",
+    "orogenic",
+    "orogeny",
+    "orographic",
+    "orography",
+    "oronym"
+   ],
+   "ipa": "ɒr",
+   "zh_approx": "奥尔",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "or = 山；高山",
+    "image": "看到 or 就想到「山；高山」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɒr/，近似「奥尔」。",
+    "chain": "or = 山；高山",
+    "origin_story": "(),",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  },
+  {
+   "form": "-or",
+   "kind": "suffix",
+   "meaning_zh": "嘴；口腔",
+   "note": "(genitive ) \"mouth\"",
+   "language": "Latin",
+   "examples": [
+    "adosculation",
+    "inosculate",
+    "inosculation",
+    "interosculate",
+    "intraoral",
+    "oral",
+    "orifice",
+    "osculant"
+   ],
+   "ipa": "ɒr",
+   "zh_approx": "奥尔",
+   "quality": "wikipedia",
+   "mnemonic": {
+    "core": "or = 嘴；口腔",
+    "image": "看到 or 就想到「嘴；口腔」：把它当成一个固定零件，遇到含它的词先套这个意思。",
+    "sound_link": "读作 /ɒr/，近似「奥尔」。",
+    "chain": "or = 嘴；口腔",
+    "origin_story": "(genitive ) \"mouth\"",
+    "trap": "同一拼写可能来自不同语言/不同词根（如 in- 表「向内」与表「否定」），按词义反推。"
+   }
+  }
+ ]
+}

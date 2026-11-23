@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/lietxia/learning_english/data/schema/vocabulary.schema.json",
+  "title": "CET-4/CET-6 词汇库",
+  "type": "object",
+  "required": ["meta", "words"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["name", "version", "generated", "count", "levels", "sources"],
+      "properties": {
+        "name": {"type": "string"},
+        "version": {"type": "string"},
+        "generated": {"type": "string"},
+        "count": {"type": "integer", "minimum": 0},
+        "levels": {"type": "object", "additionalProperties": {"type": "integer"}},
+        "sources": {"type": "array", "items": {"type": "string"}},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "words": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/word"}
+    }
+  },
+  "$defs": {
+    "word": {
+      "type": "object",
+      "required": ["id", "word", "level", "sources"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^w_[a-z0-9_]+$"},
+        "word": {"type": "string", "minLength": 1},
+        "level": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "enum": ["CET4", "CET6"]}
+        },
+        "pos": {"type": ["string", "null"]},
+        "ipa_uk": {"type": ["string", "null"]},
+        "ipa_us": {"type": ["string", "null"]},
+        "definition_zh": {"type": ["string", "null"]},
+        "definition_zh_all": {"type": "array", "items": {"type": "string"}},
+        "frequency": {"type": ["integer", "null"], "minimum": 0},
+        "cefr": {"type": ["string", "null"], "pattern": "^(A1|A2|B1|B2|C1|C2)?$"},
+        "category": {"type": ["string", "null"]},
+        "academic": {"type": ["boolean", "null"]},
+        "advanced": {"type": ["boolean", "null"]},
+        "variant": {"type": ["string", "null"]},
+        "example": {
+          "type": ["object", "null"],
+          "properties": {
+            "en": {"type": "string"},
+            "zh": {"type": "string"},
+            "source": {"type": ["string", "null"]}
+          }
+        },
+        "phrases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["phrase", "zh"],
+            "properties": {"phrase": {"type": "string"}, "zh": {"type": "string"}}
+          }
+        },
+        "sources": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+      }
+    }
+  }
+}

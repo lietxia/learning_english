@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/lietxia/learning_english/data/schema/affixes.schema.json",
+  "title": "英语词缀库（前缀 / 后缀）",
+  "type": "object",
+  "required": ["meta", "prefixes", "suffixes"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["name", "version", "generated", "prefix_count", "suffix_count"],
+      "properties": {
+        "name": {"type": "string"},
+        "version": {"type": "string"},
+        "generated": {"type": "string"},
+        "prefix_count": {"type": "integer", "minimum": 0},
+        "suffix_count": {"type": "integer", "minimum": 0},
+        "sources": {"type": "array"},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "prefixes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["form", "kind", "meaning_zh", "ipa", "zh_approx", "mnemonic"],
+        "properties": {
+          "form": {"type": "string"},
+          "kind": {"type": "string"},
+          "group": {"type": "string"},
+          "meaning_zh": {"type": "string"},
+          "note": {"type": ["string", "null"]},
+          "ipa": {"type": "string"},
+          "zh_approx": {"type": "string"},
+          "mnemonic": {"$ref": "#/$defs/mnemonic"},
+          "quality": {"type": "string"}
+        }
+      }
+    },
+    "suffixes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["form", "kind", "meaning_zh", "ipa", "zh_approx", "mnemonic"],
+        "properties": {
+          "form": {"type": "string"},
+          "kind": {"type": "string"},
+          "pos": {"type": "string"},
+          "meaning_zh": {"type": "string"},
+          "note": {"type": ["string", "null"]},
+          "ipa": {"type": "string"},
+          "zh_approx": {"type": "string"},
+          "mnemonic": {"$ref": "#/$defs/mnemonic"},
+          "quality": {"type": "string"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "mnemonic": {
+      "type": "object",
+      "required": ["core", "image", "sound_link", "chain", "origin_story", "trap"],
+      "properties": {
+        "core": {"type": "string"},
+        "image": {"type": "string"},
+        "sound_link": {"type": "string"},
+        "chain": {"type": "string"},
+        "origin_story": {"type": ["string", "null"]},
+        "trap": {"type": "string"}
+      }
+    }
+  }
+}

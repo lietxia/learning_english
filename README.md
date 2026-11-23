@@ -69,6 +69,13 @@ learning_english/
 │   ├── data-detail.js    # 39 组词源逻辑 / 74 词多义库 / 六法操作步骤
 │   ├── data-gloss.js     # 拆解词素释义（前缀 / 后缀 / 词根）+ 来源清单
 │   └── app.js            # 全部视图渲染、SRS 调度、测验、朗读、localStorage
+├── data/                 # 规范 JSON 数据库（当前数据主库）
+│   ├── vocabulary.json   # 四六级单词库（7599 词：音标 / 释义 / 真题例句 / 词频 / 级别）
+│   ├── roots.json        # 词根图谱（1641 词根：读音 / 字义 / 记忆联想 / 例词 / 关联词）
+│   ├── affixes.json      # 前缀 105 + 后缀 101（同化组 / 词性）
+│   ├── extras.json       # 主题词场 / 易混词 / 记忆法 / 一词多义 / 复习档位
+│   ├── schema/           # JSON Schema（vocabulary / roots / affixes）
+│   └── README.md         # 字段规范、数据来源、统计与校验
 ├── report.md             # 调研报告与实现说明（含资料来源、验证结果）
 ├── README.md
 ├── LICENSE               # MIT
@@ -118,7 +125,7 @@ learning_english/
 
 ## 已知限制
 
-- 词库是精选核心词，不是完整四六级大纲词表。
+- 词库已按公开来源合并为完整四六级词表（7599 词，见 `data/vocabulary.json`），但不同来源的级别判定存在交叉，`level` 字段可能同时含 CET4 与 CET6。
 - 进度只存在本机浏览器，换设备 / 清缓存会丢失。
 - 「望词生义」有边界：拆不通的词不要硬拆（例如 `salary` 的 `sal` 是「盐」，`understand` 的 `under` 是古义「在…之中」），词源故事本身就是记忆点，但不能当万能公式。
 
