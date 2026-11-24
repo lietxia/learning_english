@@ -40,7 +40,7 @@ async function loadFullData() {
     console.warn('[learning_english] 全量数据加载失败：', err);
   }
   updateStats();
-  if (['home', 'words', 'phrases', 'allroots'].includes(state.view)) setView(state.view);
+  if (['home', 'roots', 'words', 'phrases', 'allroots'].includes(state.view)) setView(state.view);
 }
 
 /* ---------- 全量视图的筛选与分页 ---------- */
@@ -86,6 +86,11 @@ function pager(view, pages) {
     <button class="btn btn-sm btn-outline-secondary" data-paction="page" data-view="${view}" data-delta="1" ${cur >= pages - 1 ? 'disabled' : ''}><i class="bi bi-chevron-right"></i></button>
   </div>`;
 }
+function ipaText(x) {
+  const s = String((x && x.ipa) || '').trim();
+  if (!s) return '';
+  return s.startsWith('/') ? s : '/' + s + '/';
+}
 function fullLoading(view) {
   if (!FULL.loaded && !FULL.error) return `${pageHead('加载中…', '正在读取全量 JSON 数据，请稍候')}<div class="empty-state"><i class="bi bi-hourglass-split"></i> 正在加载 ${view}…</div>`;
   if (FULL.error) return `${pageHead('数据加载失败', '请通过 HTTP 服务访问本站')}<div class="empty-state"><i class="bi bi-exclamation-triangle"></i> ${esc(FULL.error)}</div>`;
@@ -112,9 +117,11 @@ const state = {
   reviewSessionCount: 0,
   quiz: null,
   srs: loadSRS(),
-  fullQuery: { words: '', roots: '', phrases: '' },
+  fullQuery: { words: '', roots: '', phrases: '', hot: '' },
   fullLevel: { words: 'all', roots: 'all', phrases: 'all' },
-  page: { words: 0, roots: 0, phrases: 0 },
+  page: { words: 0, roots: 0, phrases: 0, hot: 0 },
+  hotCurated: false,
+  hotSelected: null,
   phraseMode: 'browse',
   phraseQuiz: null,
   expandedRoot: null
@@ -362,12 +369,54 @@ function filteredFamilies() {
   });
 }
 
+/* ---------- 高频词根：全量库中关联 ≥3 个四六级词的词根 ---------- */
+function hotRoots() {
+  if (!FULL.loaded) return [];
+  const q = state.fullQuery.hot.trim().toLowerCase();
+  let list = FULL.roots.filter(x => (x.cw || []).length >= 3);
+  if (state.hotCurated) list = list.filter(x => x.q === 'curated');
+  if (q) list = list.filter(x => x.r.toLowerCase().includes(q) || (x.mz || '').includes(q) ||
+    (x.ipa || '').toLowerCase().includes(q) || (x.v || []).some(v => v.toLowerCase().includes(q)) ||
+    (x.cw || []).some(c => c.word.toLowerCase().includes(q)));
+  return list.sort((a, b) => (b.q === 'curated') - (a.q === 'curated') || (b.cw || []).length - (a.cw || []).length);
+}
+function renderHotBlock() {
+  if (!FULL.loaded) return `<div class="empty-state"><i class="bi bi-hourglass-split"></i> 正在加载高频词根…</div>`;
+  if (FULL.error) return '';
+  const list = hotRoots();
+  const { items, pages } = pageSlice(list, 'hot', 20);
+  return `
+    <div class="section-label">高频词根 · ${list.length} 条（按关联四六级词数排序，人工核对优先）</div>
+    <div class="filter-bar">
+      <div class="search-box"><i class="bi bi-search"></i><input id="hotRootSearch" type="search" placeholder="搜索高频词根、读音、中文义或例词…" value="${esc(state.fullQuery.hot)}"></div>
+      <div class="seg" id="hotLevel">
+        <button data-paction="hotfilter" class="${state.hotCurated ? '' : 'active'}">全部 ${list.length}</button>
+        <button data-paction="hotfilter" class="${state.hotCurated ? 'active' : ''}">只看人工核对</button>
+      </div>
+      <span class="hint-inline">点击词根展开读音与联想</span>
+    </div>
+    <div class="root-grid">
+      ${items.map(x => `
+        <div class="root-card ${state.hotSelected === x.id ? 'selected' : ''}" data-paction="hotexpand" data-id="${esc(x.id)}">
+          <div class="root-name">${esc(x.r)} <span class="hint-inline">${esc(ipaText(x))}</span></div>
+          <div class="root-meaning">${esc(x.mz)}</div>
+          <div class="root-variants">${(x.v || []).slice(0, 5).map(v => `<span class="variant-chip">${esc(v)}</span>`).join('')}</div>
+          <div class="root-foot"><span>${x.q === 'curated' ? '人工核对' : '全量库'} · ${(x.cw || []).length} 个关联词</span><span>${state.hotSelected === x.id ? '收起 ↑' : '读音+联想 ↓'}</span></div>
+          ${state.hotSelected === x.id ? rootDetailHtml(x) : ''}
+        </div>`).join('') || empty('没有匹配的高频词根')}
+    </div>
+    ${pager('hot', pages)}
+    <div class="section-label" style="margin-top:26px">精选家族 · ${ROOT_FAMILIES.length} 组（三色词素拆解）</div>
+  `;
+}
+
 function renderRoots() {
   const families = filteredFamilies();
   const sel = state.selectedFamily ? ROOT_FAMILIES.find(f => f.id === state.selectedFamily) : null;
 
   $('#view-roots').innerHTML = `
-    ${pageHead('词根图谱', `${ROOT_FAMILIES.length} 组高频词根，覆盖四六级核心词。点击词根展开派生词链，看每个词是怎么「长」出来的。`)}
+    ${pageHead('词根图谱', `高频词根 ${FULL.loaded ? hotRoots().length : '…'} 条（全量库筛选）+ ${ROOT_FAMILIES.length} 组精选家族。上方每条含读音、字义与记忆联想；下方精选家族可看三色词素拆解与派生词链。`)}
+    ${renderHotBlock()}
     <div class="filter-bar">
       <div class="search-box"><i class="bi bi-search"></i>
         <input id="rootSearch" type="search" placeholder="搜索单词、词根或含义…" value="${esc(state.search)}"></div>
@@ -971,7 +1020,7 @@ function renderPolysemy() {
 function rootDetailHtml(x) {
   const mn = x.mn || {};
   const rows = [
-    ['核心', mn.core], ['读音 + 谐音', `/${x.ipa || ''}/ · 「${x.zha || ''}」`],
+    ['核心', mn.core], ['读音 + 谐音', `${ipaText(x)} · 「${x.zha || ''}」`],
     ['画面联想', mn.image], ['谐音钩子', mn.sound], ['例词链', mn.chain],
     ['源词故事', mn.story], ['易错点', mn.trap]
   ].filter(([, v]) => v);
@@ -1000,7 +1049,7 @@ function renderAllRoots() {
     <div class="root-grid">
       ${items.map(x => `
         <div class="root-card ${state.expandedRoot === x.id ? 'selected' : ''}" data-paction="expandroot" data-id="${esc(x.id)}">
-          <div class="root-name">${esc(x.r)} <span class="hint-inline">/${esc(x.ipa || '')}/</span></div>
+          <div class="root-name">${esc(x.r)} <span class="hint-inline">${esc(ipaText(x))}</span></div>
           <div class="root-meaning">${esc(x.mz)}</div>
           <div class="root-variants">${(x.v || []).slice(0, 6).map(v => `<span class="variant-chip">${esc(v)}</span>`).join('')}</div>
           <div class="root-foot"><span>${x.q === 'curated' ? '人工核对' : '规则生成'} · ${(x.cw || []).length} 个关联词</span><span>${state.expandedRoot === x.id ? '收起 ↑' : '看联想 ↓'}</span></div>
@@ -1185,6 +1234,14 @@ document.addEventListener('click', e => {
       setView(state.view); return;
     }
     if (act === 'mode') { state.phraseMode = pa.dataset.mode; setView('phrases'); return; }
+    if (act === 'hotexpand') {
+      state.hotSelected = state.hotSelected === pa.dataset.id ? null : pa.dataset.id;
+      renderRoots(); return;
+    }
+    if (act === 'hotfilter') {
+      state.hotCurated = !state.hotCurated; state.page.hot = 0; state.hotSelected = null;
+      renderRoots(); return;
+    }
     if (act === 'expandroot') {
       state.expandedRoot = state.expandedRoot === pa.dataset.id ? null : pa.dataset.id;
       renderAllRoots(); return;
@@ -1335,14 +1392,14 @@ document.addEventListener('click', e => {
 
 document.addEventListener('input', e => {
   const id = e.target.id;
-  const fullMap = { allrootSearch: 'roots', wordSearch: 'words', phraseSearch: 'phrases' };
+  const fullMap = { allrootSearch: 'roots', wordSearch: 'words', phraseSearch: 'phrases', hotRootSearch: 'hot' };
   if (fullMap[id]) {
     const key = fullMap[id];
     state.fullQuery[key] = e.target.value;
     state.page[key] = 0;
     state.phraseQuiz = null;
     const pos = e.target.selectionStart;
-    ({ roots: renderAllRoots, words: renderWords, phrases: renderPhrases })[key]();
+    (key === 'hot' ? renderRoots : ({ roots: renderAllRoots, words: renderWords, phrases: renderPhrases })[key])();
     const input = $(`#${id}`);
     if (input) { input.focus(); input.setSelectionRange(pos, pos); }
     return;
