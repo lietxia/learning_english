@@ -583,6 +583,9 @@ a { color: var(--accent); }
   background: rgba(74,143,255,.09); border-radius: 6px; padding: 1px 6px; height: fit-content;
 }
 .word-list { padding: 0 18px; }
+.root-detail .word-list { padding: 0; margin-top: 4px; }
+.root-detail .word-row { padding: 10px 2px; }
+.root-detail .section-label { margin: 6px 0 2px; }
 .phrase-list { padding: 0 18px; }
 .phrase-row {
   display: flex; align-items: center; justify-content: space-between; gap: 16px;

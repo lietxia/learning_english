@@ -124,7 +124,8 @@ const state = {
   hotSelected: null,
   phraseMode: 'browse',
   phraseQuiz: null,
-  expandedRoot: null
+  expandedRoot: null,
+  chainExpanded: null
 };
 
 /* ---------- 工具函数 ---------- */
@@ -1017,6 +1018,70 @@ function renderPolysemy() {
 /* ============================================================
    视图 2b：完整词根库（全量 JSON）
    ============================================================ */
+/* ---------- 用词根给关联词做三色拆解（前缀 + 词根 + 后缀） ---------- */
+function plainForm(s) { return String(s || '').replace(/[^a-z]/gi, '').toLowerCase(); }
+function decomposeForRoot(word, rootX) {
+  const w = plainForm(word);
+  const forms = [rootX.r, ...(rootX.v || [])].map(plainForm)
+    .filter(f => f.length >= 2).sort((a, b) => b.length - a.length);
+  let rf = '', pos = -1;
+  for (const f of forms) {
+    const i = w.indexOf(f);
+    if (i >= 0 && f.length > rf.length) { rf = f; pos = i; }
+  }
+  if (!rf) return null;
+  const before = w.slice(0, pos), after = w.slice(pos + rf.length);
+  let pf = '', sf = '';
+  for (const p of PREFIXES) {
+    const f = plainForm(p.p);
+    if (f && f.length >= 2 && f.length > pf.length && before.endsWith(f) && before.length - f.length <= 2) pf = f;
+  }
+  for (const s of SUFFIXES) {
+    const f = plainForm(String(s.s).split(/[\s/]/)[0]);
+    if (f && f.length >= 3 && f.length > sf.length && after.startsWith(f) && after.length - f.length <= 2) sf = f;
+  }
+  return { p: pf, r: rf, s: sf };
+}
+function renderRootWordChain(rootX) {
+  const words = rootX.cw || [];
+  if (!words.length) return '<div class="hint-inline">这条词根暂未关联四六级单词。</div>';
+  const expanded = state.chainExpanded === rootX.id;
+  const show = expanded ? words : words.slice(0, 8);
+  const rows = show.map(c => {
+    const full = WORD_INDEX.get(String(c.word).toLowerCase()) || {};
+    const d = decomposeForRoot(c.word, rootX);
+    const added = !!state.srs[c.word];
+    return `<div class="word-row">
+      <div>
+        <div class="word-head">
+          <span class="word-name">${esc(c.word)}</span>
+          ${(c.level || []).map(l => `<span class="lv-badge lv-${l === 'CET4' ? 4 : 6}">${esc(l)}</span>`).join('')}
+          <button class="speak-btn" data-speak="${esc(c.word)}" title="朗读"><i class="bi bi-volume-up"></i></button>
+        </div>
+        ${full.uk || full.us ? `<div class="word-meta mt-8"><span class="hint-inline">${full.uk ? '英 ' + esc(full.uk) : ''}${full.us ? '　美 ' + esc(full.us) : ''}</span></div>` : ''}
+        <div class="word-meta mt-8">${posChips(full.p)}</div>
+      </div>
+      <div>
+        <div class="decomp">
+          ${d && d.p ? `${glossChip('prefix', glossPrefix(d.p))}<span class="chip-plus">+</span>` : ''}
+          ${glossChip('root', { form: d ? d.r : rootX.r, common: rootX.mz, note: rootX.zha || '', inline: '' })}
+          ${d && d.s ? `<span class="chip-plus">+</span>${glossChip('suffix', glossSuffix(d.s))}` : ''}
+        </div>
+        <div class="word-def"><b>${esc(full.d || c.zh || '')}</b></div>
+        ${full.e && full.e.en ? `<div class="word-ex">${esc(full.e.en)}</div>` : ''}
+        <div class="word-add">
+          <button class="word-link" data-paction="lookup" data-word="${esc(c.word)}">词库详情 →</button>
+          <button class="add-btn" data-paction="addword" data-word="${esc(c.word)}">
+            <i class="bi ${added ? 'bi-check2-circle' : 'bi-plus-circle'}"></i>${added ? '已加入复习' : '加入复习'}</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+  return `<div class="section-label">组出的单词 · ${words.length} 词（点色块看词素意思，点喇叭听读音）</div>
+    <div class="word-list">${rows}</div>
+    ${words.length > 8 ? `<div style="text-align:center"><button class="btn btn-sm btn-outline-secondary" data-paction="chainmore" data-id="${esc(rootX.id)}">
+      ${expanded ? '收起' : '展开全部 ' + words.length + ' 词'}</button></div>` : ''}`;
+}
 function rootDetailHtml(x) {
   const mn = x.mn || {};
   const rows = [
@@ -1026,7 +1091,7 @@ function rootDetailHtml(x) {
   ].filter(([, v]) => v);
   return `<div class="root-detail">
     ${rows.map(([k, v]) => `<div class="root-detail-row"><span class="root-detail-k">${k}</span><span>${esc(v)}</span></div>`).join('')}
-    ${(x.cw || []).length ? `<div class="root-detail-row"><span class="root-detail-k">关联词</span><span>${x.cw.slice(0, 8).map(c => `<button class="word-link" data-paction="lookup" data-word="${esc(c.word)}">${esc(c.word)}</button>`).join(' ')}</span></div>` : ''}
+    <div style="margin-top:10px">${renderRootWordChain(x)}</div>
   </div>`;
 }
 function renderAllRoots() {
@@ -1234,6 +1299,10 @@ document.addEventListener('click', e => {
       setView(state.view); return;
     }
     if (act === 'mode') { state.phraseMode = pa.dataset.mode; setView('phrases'); return; }
+    if (act === 'chainmore') {
+      state.chainExpanded = state.chainExpanded === pa.dataset.id ? null : pa.dataset.id;
+      setView(state.view); return;
+    }
     if (act === 'hotexpand') {
       state.hotSelected = state.hotSelected === pa.dataset.id ? null : pa.dataset.id;
       renderRoots(); return;

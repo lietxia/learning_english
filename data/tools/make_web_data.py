@@ -27,7 +27,7 @@ for x in r['roots']:
         'id': x['id'], 'r': x['root'], 'v': x.get('variants') or [],
         'me': x.get('meaning_en'), 'mz': x.get('meaning_zh'), 'lang': x.get('language'),
         'org': (x.get('origins') or [])[:3], 'ex': (x.get('examples') or [])[:8],
-        'cw': (x.get('cet_words') or [])[:8],
+        'cw': (x.get('cet_words') or []),
         'ipa': pr.get('ipa'), 'zha': pr.get('zh_approx'), 'prm': pr.get('method'),
         'mn': {'core': mn.get('core'), 'image': mn.get('image'),
                'sound': mn.get('sound_link'), 'chain': mn.get('chain'),

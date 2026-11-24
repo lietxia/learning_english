@@ -19,7 +19,7 @@
 | `data/cet4.json`         | 四级词汇视图（从 vocabulary.json 派生） | 5425 词 |
 | `data/cet6.json`         | 六级词汇视图（从 vocabulary.json 派生） | 4413 词 |
 | `data/web-words.json`    | 网页精简词库（全量词 + 全部短语，供前端 fetch） | 5.1 MB |
-| `data/web-roots.json`    | 网页精简词根（全量词根 + 联想，供前端 fetch） | 1.57 MB |
+| `data/web-roots.json`    | 网页精简词根（全量词根 + 联想 + 全部关联词，供前端 fetch） | 1.65 MB |
 | `data/schema/*.schema.json` | 上述 JSON 的 JSON Schema 定义 | 3 份 |
 | `data/tools/*.py`        | 生成视图 / 生成网页数据 / 校验数据库的脚本 | 3 个 |
 | `data/README.md`         | 本文件 | — |
