@@ -570,3 +570,31 @@ a { color: var(--accent); }
 .mt-8 { margin-top: 8px; }
 .mt-16 { margin-top: 16px; }
 .mb-16 { margin-bottom: 16px; }
+
+/* ---------- 全量数据视图：词库 / 词组 / 完整词根 ---------- */
+.pager { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 18px 0 4px; }
+.root-detail {
+  grid-column: 1 / -1; margin-top: 12px; padding-top: 12px;
+  border-top: 1px dashed var(--border); text-align: left;
+}
+.root-detail-row { display: flex; gap: 8px; font-size: 12px; line-height: 1.65; margin-bottom: 7px; }
+.root-detail-k {
+  flex: 0 0 66px; font-weight: 800; color: var(--accent);
+  background: rgba(74,143,255,.09); border-radius: 6px; padding: 1px 6px; height: fit-content;
+}
+.word-list { padding: 0 18px; }
+.phrase-list { padding: 0 18px; }
+.phrase-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 13px 4px; border-bottom: 1px solid var(--border);
+}
+.phrase-row:last-child { border-bottom: 0; }
+.phrase-main { min-width: 0; }
+.phrase-text { font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: var(--text); }
+.phrase-zh { font-size: 13px; color: var(--muted); margin-top: 3px; }
+.phrase-actions { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
+@media (max-width: 640px) {
+  .phrase-row { flex-direction: column; align-items: flex-start; }
+  .root-detail-row { flex-direction: column; gap: 2px; }
+  .root-detail-k { flex-basis: auto; width: fit-content; }
+}

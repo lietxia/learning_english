@@ -9,6 +9,89 @@ const DETAIL = window.LE_DETAIL || { ROOT_ETYMOLOGY: {}, METHOD_STEPS: {}, POLYS
 const { ROOT_ETYMOLOGY, METHOD_STEPS, POLYSEMY } = DETAIL;
 const GLOSS = window.LE_GLOSS || { PREFIXES: {}, SUFFIXES: {}, ROOTS: {}, PREFIX_GROUPS: [], SUFFIX_ENTRIES: [], SOURCES: [] };
 
+/* ---------- 全量 JSON 数据：从 data/web-*.json 异步加载（与原有精选数据并存） ---------- */
+const FULL = { words: [], roots: [], phrases: [], loaded: false, error: null };
+const PHRASE_INDEX = new Map();
+const WORD_INDEX = new Map();
+
+async function loadFullData() {
+  try {
+    const [wr, rr] = await Promise.all([
+      fetch('data/web-words.json').then(r => { if (!r.ok) throw new Error('词库 HTTP ' + r.status); return r.json(); }),
+      fetch('data/web-roots.json').then(r => { if (!r.ok) throw new Error('词根 HTTP ' + r.status); return r.json(); })
+    ]);
+    FULL.words = wr.words || [];
+    FULL.roots = rr.roots || [];
+    for (const w of FULL.words) {
+      WORD_INDEX.set(w.w.toLowerCase(), w);
+      for (const p of (w.ph || [])) {
+        const key = String(p.phrase || '').trim().toLowerCase();
+        if (!key) continue;
+        if (!PHRASE_INDEX.has(key)) PHRASE_INDEX.set(key, { phrase: p.phrase, zh: p.zh || '', words: [] });
+        const entry = PHRASE_INDEX.get(key);
+        if (!entry.zh && p.zh) entry.zh = p.zh;
+        if (!entry.words.includes(w.w)) entry.words.push(w.w);
+      }
+    }
+    FULL.phrases = Array.from(PHRASE_INDEX.values());
+    FULL.loaded = true;
+  } catch (err) {
+    FULL.error = String(err);
+    console.warn('[learning_english] 全量数据加载失败：', err);
+  }
+  updateStats();
+  if (['home', 'words', 'phrases', 'allroots'].includes(state.view)) setView(state.view);
+}
+
+/* ---------- 全量视图的筛选与分页 ---------- */
+function fullWords() {
+  const q = state.fullQuery.words.trim().toLowerCase();
+  const lv = state.fullLevel.words;
+  let list = FULL.words;
+  if (lv !== 'all') list = list.filter(w => w.l.includes(lv));
+  if (q) list = list.filter(w => w.w.toLowerCase().includes(q) || (w.d || '').includes(q) ||
+    (w.da || []).some(x => x.includes(q)) || (w.e?.en || '').toLowerCase().includes(q));
+  return list;
+}
+function fullRoots() {
+  const q = state.fullQuery.roots.trim().toLowerCase();
+  const lv = state.fullLevel.roots;
+  let list = FULL.roots;
+  if (lv !== 'all') list = list.filter(x => (lv === 'curated' ? x.q === 'curated' : x.q !== 'curated'));
+  if (q) list = list.filter(x => x.r.toLowerCase().includes(q) || (x.mz || '').includes(q) ||
+    (x.me || '').toLowerCase().includes(q) || (x.v || []).some(v => v.toLowerCase().includes(q)) ||
+    (x.cw || []).some(c => c.word.toLowerCase().includes(q)));
+  return list;
+}
+function fullPhrases() {
+  const q = state.fullQuery.phrases.trim().toLowerCase();
+  const lv = state.fullLevel.phrases;
+  let list = FULL.phrases;
+  if (lv !== 'all') list = list.filter(p => p.words.some(w => (WORD_INDEX.get(w.toLowerCase())?.l || []).includes(lv)));
+  if (q) list = list.filter(p => p.phrase.toLowerCase().includes(q) || p.zh.includes(q) ||
+    p.words.some(w => w.toLowerCase().includes(q)));
+  return list;
+}
+function pageSlice(list, view, size) {
+  const max = Math.max(0, Math.ceil(list.length / size) - 1);
+  state.page[view] = Math.min(Math.max(0, state.page[view]), max);
+  return { items: list.slice(state.page[view] * size, state.page[view] * size + size), pages: max + 1 };
+}
+function pager(view, pages) {
+  if (pages <= 1) return '';
+  const cur = state.page[view];
+  return `<div class="pager">
+    <button class="btn btn-sm btn-outline-secondary" data-paction="page" data-view="${view}" data-delta="-1" ${cur === 0 ? 'disabled' : ''}><i class="bi bi-chevron-left"></i></button>
+    <span class="hint-inline">第 ${cur + 1} / ${pages} 页</span>
+    <button class="btn btn-sm btn-outline-secondary" data-paction="page" data-view="${view}" data-delta="1" ${cur >= pages - 1 ? 'disabled' : ''}><i class="bi bi-chevron-right"></i></button>
+  </div>`;
+}
+function fullLoading(view) {
+  if (!FULL.loaded && !FULL.error) return `${pageHead('加载中…', '正在读取全量 JSON 数据，请稍候')}<div class="empty-state"><i class="bi bi-hourglass-split"></i> 正在加载 ${view}…</div>`;
+  if (FULL.error) return `${pageHead('数据加载失败', '请通过 HTTP 服务访问本站')}<div class="empty-state"><i class="bi bi-exclamation-triangle"></i> ${esc(FULL.error)}</div>`;
+  return null;
+}
+
 /* 单词 → 多义条目索引，便于在任何视图里按词查义 */
 const POLYSEMY_MAP = new Map(POLYSEMY.map(p => [p.w, p]));
 
@@ -28,7 +111,13 @@ const state = {
   reviewIndex: 0,
   reviewSessionCount: 0,
   quiz: null,
-  srs: loadSRS()
+  srs: loadSRS(),
+  fullQuery: { words: '', roots: '', phrases: '' },
+  fullLevel: { words: 'all', roots: 'all', phrases: 'all' },
+  page: { words: 0, roots: 0, phrases: 0 },
+  phraseMode: 'browse',
+  phraseQuiz: null,
+  expandedRoot: null
 };
 
 /* ---------- 工具函数 ---------- */
@@ -163,7 +252,7 @@ function updateStats() {
   const sl = $('#sideLearned');
   if (sl) sl.textContent = learned;
   const st = $('#sideTotal');
-  if (st) st.textContent = ALL_WORDS.length;
+  if (st) st.textContent = FULL.loaded ? FULL.words.length : ALL_WORDS.length;
 }
 
 /* ---------- 导航 ---------- */
@@ -174,7 +263,8 @@ function setView(view) {
   const target = $(`#view-${view}`);
   if (target) target.classList.remove('d-none');
   const renderers = {
-    home: renderHome, roots: renderRoots, affixes: renderAffixes,
+    home: renderHome, roots: renderRoots, allroots: renderAllRoots,
+    words: renderWords, phrases: renderPhrases, affixes: renderAffixes,
     themes: renderThemes, confuse: renderConfuse, review: renderReview,
     quiz: renderQuiz, methods: renderMethods,
     etymology: renderEtymology, polysemy: renderPolysemy
@@ -194,8 +284,10 @@ function empty(text) {
    视图 1：总览
    ============================================================ */
 function renderHome() {
-  const total = ALL_WORDS.length;
+  const total = FULL.loaded ? FULL.words.length : ALL_WORDS.length;
   const families = ROOT_FAMILIES.length;
+  const rootsTotal = FULL.loaded ? FULL.roots.length : families;
+  const phrasesTotal = FULL.loaded ? FULL.phrases.length : 0;
   const added = Object.keys(state.srs).length;
   const mastered = Object.values(state.srs).filter(v => v.stage >= MASTER_STAGE).length;
   const pct = total ? Math.round(mastered / total * 100) : 0;
@@ -206,16 +298,16 @@ function renderHome() {
 
     <div class="row g-3">
       <div class="col-6 lg:col-3"><div class="card-surface stat-card">
-        <div class="stat-num">${total}</div><div class="stat-label">核心词总数 · ${families} 个词根家族</div>
+        <div class="stat-num">${total}</div><div class="stat-label">四六级词库 · ${families} 个精选词根家族</div>
+        <i class="bi bi-journal-text stat-icon"></i></div></div>
+      <div class="col-6 lg:col-3"><div class="card-surface stat-card">
+        <div class="stat-num" style="color:var(--purple)">${rootsTotal}</div><div class="stat-label">完整词根 · 每条含读音与联想</div>
         <i class="bi bi-diagram-3 stat-icon"></i></div></div>
       <div class="col-6 lg:col-3"><div class="card-surface stat-card">
-        <div class="stat-num" style="color:var(--purple)">${families}</div><div class="stat-label">高频词根 · 记一带十</div>
-        <i class="bi bi-bug stat-icon"></i></div></div>
+        <div class="stat-num" style="color:var(--amber)">${phrasesTotal || added}</div><div class="stat-label">${phrasesTotal ? '常用词组 · 可搜索可测验' : '已加入复习队列'}</div>
+        <i class="bi bi-chat-square-text stat-icon"></i></div></div>
       <div class="col-6 lg:col-3"><div class="card-surface stat-card">
-        <div class="stat-num" style="color:var(--amber)">${added}</div><div class="stat-label">已加入复习队列 · 已掌握 ${mastered}</div>
-        <i class="bi bi-bookmark-check stat-icon"></i></div></div>
-      <div class="col-6 lg:col-3"><div class="card-surface stat-card">
-        <div class="stat-num" style="color:var(--green)">${due}</div><div class="stat-label">当前待复习 · 掌握度 ${pct}%</div>
+        <div class="stat-num" style="color:var(--green)">${due}</div><div class="stat-label">当前待复习 · 已掌握 ${mastered}</div>
         <i class="bi bi-alarm stat-icon"></i></div></div>
     </div>
 
@@ -227,6 +319,9 @@ function renderHome() {
         </div>
         <div class="d-flex gap-2 flex-wrap">
           <button class="btn btn-sm btn-outline-primary" data-goto="roots"><i class="bi bi-diagram-3"></i> 逛词根图谱</button>
+          <button class="btn btn-sm btn-outline-primary" data-goto="allroots"><i class="bi bi-diagram-3"></i> 完整词根库</button>
+          <button class="btn btn-sm btn-outline-info" data-goto="words"><i class="bi bi-journal-text"></i> 查四六级单词</button>
+          <button class="btn btn-sm btn-outline-info" data-goto="phrases"><i class="bi bi-chat-square-text"></i> 词组学习</button>
           <button class="btn btn-sm btn-outline-success" data-goto="review"><i class="bi bi-repeat"></i> 开始复习</button>
           <button class="btn btn-sm btn-outline-secondary" data-goto="quiz"><i class="bi bi-patch-question"></i> 随机测验</button>
         </div>
@@ -546,6 +641,9 @@ function renderReview() {
 
   const item = q[idx];
   const info = wordInfo(item.w);
+  const isPhrase = item.w.startsWith('ph:');
+  const displayWord = isPhrase ? item.w.slice(3) : item.w;
+  const phraseZh = isPhrase ? (PHRASE_INDEX.get(displayWord.toLowerCase())?.zh || '') : '';
   const rootPart = info ? (info.r || info.familyRoot) : '';
   const pct = Math.round(idx / q.length * 100);
   const stage = Math.min(item.stage ?? 0, REVIEW_STEPS.length - 1);
@@ -560,14 +658,14 @@ function renderReview() {
 
       <div class="card-surface flash-card">
         <div class="flash-label">Recall the meaning</div>
-        <div class="flash-word">${esc(item.w)}</div>
-        <div class="flash-root">${rootPart ? esc(rootPart) + ' · ' : ''}${info ? esc(info.familyMeaning) : ''}</div>
-        <button class="speak-btn" data-speak="${esc(item.w)}" style="font-size:18px"><i class="bi bi-volume-up"></i></button>
+        <div class="flash-word">${esc(displayWord)}</div>
+        <div class="flash-root">${isPhrase ? '常用词组' : (rootPart ? esc(rootPart) + ' · ' : '')}${isPhrase ? '' : (info ? esc(info.familyMeaning) : '')}</div>
+        <button class="speak-btn" data-speak="${esc(displayWord)}" style="font-size:18px"><i class="bi bi-volume-up"></i></button>
         <div class="flash-divider"></div>
 
         ${state.showAnswers ? `
           <div class="flash-answer">
-            <div class="flash-def">${info ? esc(info.d) : '（该词来自主题词场）'}${info?.t ? `<span class="flash-pos">${posChips(info.t)}</span>` : ''}</div>
+            <div class="flash-def">${isPhrase ? esc(phraseZh || '（释义见词组学习视图）') : (info ? esc(info.d) : '（该词来自主题词场）')}${info?.t ? `<span class="flash-pos">${posChips(info.t)}</span>` : ''}</div>
             ${info ? `<div class="flash-decomp">
               ${info.p ? `${glossChip('prefix', glossPrefix(info.p))}<span class="chip-plus">+</span>` : ''}
               ${glossChip('root', glossRoot(info.r, { root: info.familyRoot, meaning: info.familyMeaning }))}
@@ -868,6 +966,199 @@ function renderPolysemy() {
 }
 
 /* ============================================================
+   视图 2b：完整词根库（全量 JSON）
+   ============================================================ */
+function rootDetailHtml(x) {
+  const mn = x.mn || {};
+  const rows = [
+    ['核心', mn.core], ['读音 + 谐音', `/${x.ipa || ''}/ · 「${x.zha || ''}」`],
+    ['画面联想', mn.image], ['谐音钩子', mn.sound], ['例词链', mn.chain],
+    ['源词故事', mn.story], ['易错点', mn.trap]
+  ].filter(([, v]) => v);
+  return `<div class="root-detail">
+    ${rows.map(([k, v]) => `<div class="root-detail-row"><span class="root-detail-k">${k}</span><span>${esc(v)}</span></div>`).join('')}
+    ${(x.cw || []).length ? `<div class="root-detail-row"><span class="root-detail-k">关联词</span><span>${x.cw.slice(0, 8).map(c => `<button class="word-link" data-paction="lookup" data-word="${esc(c.word)}">${esc(c.word)}</button>`).join(' ')}</span></div>` : ''}
+  </div>`;
+}
+function renderAllRoots() {
+  const loading = fullLoading('词根');
+  if (loading) { $('#view-allroots').innerHTML = loading; return; }
+  const list = fullRoots();
+  const { items, pages } = pageSlice(list, 'roots', 24);
+  const lv = state.fullLevel.roots;
+  $('#view-allroots').innerHTML = `
+    ${pageHead('完整词根库', `${FULL.roots.length} 条词根，每条含英语读音、中文义与加深记忆的联想：画面、谐音、例词链、源词故事、易错点。`)}
+    <div class="filter-bar">
+      <div class="search-box"><i class="bi bi-search"></i><input id="allrootSearch" type="search" placeholder="搜索词根、读音、中文义或例词…" value="${esc(state.fullQuery.roots)}"></div>
+      <div class="seg" id="allrootLevel">
+        <button data-paction="level" data-view="roots" data-level="all" class="${lv === 'all' ? 'active' : ''}">全部</button>
+        <button data-paction="level" data-view="roots" data-level="curated" class="${lv === 'curated' ? 'active' : ''}">人工标注 ${FULL.roots.filter(x => x.q === 'curated').length}</button>
+        <button data-paction="level" data-view="roots" data-level="generated" class="${lv === 'generated' ? 'active' : ''}">规则生成</button>
+      </div>
+      <span class="hint-inline">匹配 ${list.length} 条</span>
+    </div>
+    <div class="root-grid">
+      ${items.map(x => `
+        <div class="root-card ${state.expandedRoot === x.id ? 'selected' : ''}" data-paction="expandroot" data-id="${esc(x.id)}">
+          <div class="root-name">${esc(x.r)} <span class="hint-inline">/${esc(x.ipa || '')}/</span></div>
+          <div class="root-meaning">${esc(x.mz)}</div>
+          <div class="root-variants">${(x.v || []).slice(0, 6).map(v => `<span class="variant-chip">${esc(v)}</span>`).join('')}</div>
+          <div class="root-foot"><span>${x.q === 'curated' ? '人工核对' : '规则生成'} · ${(x.cw || []).length} 个关联词</span><span>${state.expandedRoot === x.id ? '收起 ↑' : '看联想 ↓'}</span></div>
+          ${state.expandedRoot === x.id ? rootDetailHtml(x) : ''}
+        </div>`).join('') || empty('没有匹配的词根，换个关键词试试')}
+    </div>
+    ${pager('roots', pages)}
+  `;
+}
+
+/* ============================================================
+   视图 2c：四六级完整词库（全量 JSON）
+   ============================================================ */
+function renderWords() {
+  const loading = fullLoading('词库');
+  if (loading) { $('#view-words').innerHTML = loading; return; }
+  const list = fullWords();
+  const { items, pages } = pageSlice(list, 'words', 30);
+  const lv = state.fullLevel.words;
+  $('#view-words').innerHTML = `
+    ${pageHead('四六级词库', `共 ${FULL.words.length} 词，含英式/美式音标、中文释义、真题例句与常用短语。可按级别筛选、搜索、朗读、加入复习。`)}
+    <div class="filter-bar">
+      <div class="search-box"><i class="bi bi-search"></i><input id="wordSearch" type="search" placeholder="搜索单词、释义或例句…" value="${esc(state.fullQuery.words)}"></div>
+      <div class="seg" id="wordLevel">
+        <button data-paction="level" data-view="words" data-level="all" class="${lv === 'all' ? 'active' : ''}">全部</button>
+        <button data-paction="level" data-view="words" data-level="CET4" class="${lv === 'CET4' ? 'active' : ''}">四级</button>
+        <button data-paction="level" data-view="words" data-level="CET6" class="${lv === 'CET6' ? 'active' : ''}">六级</button>
+      </div>
+      <span class="hint-inline">匹配 ${list.length} 词</span>
+    </div>
+    <div class="card-surface word-list">
+      ${items.map(w => {
+        const added = !!state.srs[w.w];
+        return `<div class="word-row">
+          <div>
+            <div class="word-head">
+              <span class="word-name">${esc(w.w)}</span>
+              ${(w.l || []).map(l => `<span class="lv-badge lv-${l === 'CET4' ? 4 : 6}">${esc(l)}</span>`).join('')}
+              <button class="speak-btn" data-speak="${esc(w.w)}" title="朗读"><i class="bi bi-volume-up"></i></button>
+            </div>
+            ${w.uk || w.us ? `<div class="word-meta mt-8 hint-inline">${w.uk ? '英 ' + esc(w.uk) : ''}${w.us ? '　美 ' + esc(w.us) : ''}</div>` : ''}
+            <div class="word-meta mt-8">${posChips(w.p)}</div>
+          </div>
+          <div>
+            <div class="word-def"><b>${esc(w.d || (w.da || [])[0] || '')}</b></div>
+            ${(w.da || []).length ? `<div class="hint-inline">${w.da.slice(0, 3).map(esc).join(' · ')}</div>` : ''}
+            ${w.e?.en ? `<div class="word-ex">${esc(w.e.en)}</div>` : ''}
+            ${w.e?.zh ? `<div class="hint-inline">${esc(w.e.zh)}</div>` : ''}
+            ${(w.ph || []).length ? `<div class="hint-inline">常用词组：${w.ph.slice(0, 3).map(p => `<button class="word-link" data-paction="phrasefilter" data-q="${esc(p.phrase)}">${esc(p.phrase)}</button>`).join(' · ')}</div>` : ''}
+            <div class="word-add"><button class="add-btn" data-paction="addword" data-word="${esc(w.w)}">
+              <i class="bi ${added ? 'bi-check2-circle' : 'bi-plus-circle'}"></i>${added ? '已加入复习' : '加入复习'}</button></div>
+          </div>
+        </div>`;
+      }).join('') || empty('没有匹配的单词')}
+    </div>
+    ${pager('words', pages)}
+  `;
+}
+
+/* ============================================================
+   视图 2d：词组学习（全量词组 + 浏览 / 测验）
+   ============================================================ */
+function makePhraseQuiz(list) {
+  const pick = () => list[Math.floor(Math.random() * list.length)];
+  const q = pick();
+  const askZh = Math.random() < 0.5;
+  const key = askZh ? (o => o.zh) : (o => o.phrase);
+  const opts = [q];
+  let guard = 80;
+  while (opts.length < 4 && guard-- > 0) {
+    const c = pick();
+    if (!opts.some(o => key(o) === key(c))) opts.push(c);
+  }
+  if (opts.length < 4) return null;
+  for (let i = opts.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [opts[i], opts[j]] = [opts[j], opts[i]];
+  }
+  const prev = state.phraseQuiz || {};
+  return {
+    q, askZh, opts, answer: opts.findIndex(o => o.phrase === q.phrase), chosen: null,
+    poolSize: list.length, correct: prev.correct || 0, total: prev.total || 0
+  };
+}
+function renderPhraseQuiz(list) {
+  if (list.length < 4) return empty('当前筛选下词组不足 4 条，换个条件试试');
+  if (!state.phraseQuiz || state.phraseQuiz.poolSize !== list.length) state.phraseQuiz = makePhraseQuiz(list);
+  if (!state.phraseQuiz) return empty('无法生成选项，换个条件试试');
+  const q = state.phraseQuiz;
+  const chosenText = q.chosen === null ? '' : (q.askZh ? q.opts[q.answer].zh : q.opts[q.answer].phrase);
+  return `
+    <div class="card-surface quiz-card">
+      <div class="quiz-score">看词组选中文 / 看中文选词组 交替出题 · 已答 ${q.total} 题，正确 ${q.correct} 题</div>
+      <div class="hint-inline" style="text-align:center">${q.askZh ? '这个词组的中文意思是？' : '哪个词组对应这个中文意思？'}</div>
+      <div class="quiz-q">${esc(q.askZh ? q.q.phrase : q.q.zh)}</div>
+      <div class="hint-inline" style="text-align:center">
+        <button class="speak-btn" data-speak="${esc(q.q.phrase)}"><i class="bi bi-volume-up"></i> 朗读词组</button>
+        · 出处单词：${q.q.words.slice(0, 4).map(w => `<button class="word-link" data-paction="lookup" data-word="${esc(w)}">${esc(w)}</button>`).join('、')}
+      </div>
+      <div class="quiz-options mt-16">
+        ${q.opts.map((o, i) => {
+          const cls = q.chosen === null ? '' : (i === q.answer ? 'correct' : (i === q.chosen ? 'wrong' : ''));
+          return `<button class="quiz-option ${cls}" data-paction="phraseopt" data-i="${i}" ${q.chosen !== null ? 'disabled' : ''}>${i + 1}. ${esc(q.askZh ? o.zh : o.phrase)}</button>`;
+        }).join('')}
+      </div>
+      <div class="quiz-feedback">${q.chosen === null ? '选一个答案' : (q.chosen === q.answer ? '✓ 正确' : `✗ 正确答案：${esc(chosenText)}`)}</div>
+      ${q.chosen !== null ? `<div style="text-align:center"><button class="btn btn-sm btn-primary" data-paction="phrasenext"><i class="bi bi-arrow-right"></i> 下一题</button></div>` : ''}
+    </div>`;
+}
+function renderPhrases() {
+  const loading = fullLoading('词组');
+  if (loading) { $('#view-phrases').innerHTML = loading; return; }
+  const list = fullPhrases();
+  const lv = state.fullLevel.phrases;
+  const head = pageHead('词组学习', `从 ${FULL.words.length} 个四六级单词中整理出 ${FULL.phrases.length} 条常用词组：可搜索、按级别筛选、朗读、加入复习，还能做「看词组选中文 / 看中文选词组」测验。`);
+  const bar = `
+    <div class="filter-bar">
+      <div class="search-box"><i class="bi bi-search"></i><input id="phraseSearch" type="search" placeholder="搜索词组、中文或所属单词…" value="${esc(state.fullQuery.phrases)}"></div>
+      <div class="seg" id="phraseMode">
+        <button data-paction="mode" data-mode="browse" class="${state.phraseMode === 'browse' ? 'active' : ''}"><i class="bi bi-list"></i> 浏览</button>
+        <button data-paction="mode" data-mode="quiz" class="${state.phraseMode === 'quiz' ? 'active' : ''}"><i class="bi bi-patch-question"></i> 词组测验</button>
+      </div>
+      <div class="seg" id="phraseLevel">
+        <button data-paction="level" data-view="phrases" data-level="all" class="${lv === 'all' ? 'active' : ''}">全部</button>
+        <button data-paction="level" data-view="phrases" data-level="CET4" class="${lv === 'CET4' ? 'active' : ''}">四级</button>
+        <button data-paction="level" data-view="phrases" data-level="CET6" class="${lv === 'CET6' ? 'active' : ''}">六级</button>
+      </div>
+      <span class="hint-inline">匹配 ${list.length} 条词组</span>
+    </div>`;
+  if (state.phraseMode === 'quiz') {
+    $('#view-phrases').innerHTML = head + bar + renderPhraseQuiz(list);
+    return;
+  }
+  const { items, pages } = pageSlice(list, 'phrases', 20);
+  $('#view-phrases').innerHTML = head + bar + `
+    <div class="card-surface phrase-list">
+      ${items.map(p => {
+        const key = 'ph:' + p.phrase.toLowerCase();
+        const added = !!state.srs[key];
+        return `<div class="phrase-row">
+          <div class="phrase-main">
+            <div class="phrase-text">${esc(p.phrase)}</div>
+            <div class="phrase-zh">${esc(p.zh)}</div>
+            <div class="hint-inline">所属单词：${p.words.slice(0, 5).map(w => `<button class="word-link" data-paction="lookup" data-word="${esc(w)}">${esc(w)}</button>`).join('、')}</div>
+          </div>
+          <div class="phrase-actions">
+            <button class="speak-btn" data-speak="${esc(p.phrase)}" title="朗读词组"><i class="bi bi-volume-up"></i></button>
+            <button class="add-btn" data-paction="addword" data-word="${esc(key)}" data-label="${esc(p.phrase)}">
+              <i class="bi ${added ? 'bi-check2-circle' : 'bi-plus-circle'}"></i>${added ? '已加入' : '加入复习'}</button>
+          </div>
+        </div>`;
+      }).join('') || empty('没有匹配的词组，换个关键词试试')}
+    </div>
+    ${pager('phrases', pages)}
+  `;
+}
+
+/* ============================================================
    事件绑定
    ============================================================ */
 document.addEventListener('click', e => {
@@ -878,6 +1169,57 @@ document.addEventListener('click', e => {
   if (gotoEl) { setView(gotoEl.dataset.goto); return; }
   const navEl = t.closest('#mainNav [data-view]');
   if (navEl) { setView(navEl.dataset.view); return; }
+
+  // 全量数据视图（词组 / 词库 / 完整词根）的动作
+  const pa = t.closest('[data-paction]');
+  if (pa) {
+    const act = pa.dataset.paction;
+    if (act === 'page') {
+      state.page[pa.dataset.view] = Math.max(0, state.page[pa.dataset.view] + Number(pa.dataset.delta));
+      setView(state.view); return;
+    }
+    if (act === 'level') {
+      state.fullLevel[pa.dataset.view] = pa.dataset.level;
+      state.page[pa.dataset.view] = 0;
+      state.phraseQuiz = null;
+      setView(state.view); return;
+    }
+    if (act === 'mode') { state.phraseMode = pa.dataset.mode; setView('phrases'); return; }
+    if (act === 'expandroot') {
+      state.expandedRoot = state.expandedRoot === pa.dataset.id ? null : pa.dataset.id;
+      renderAllRoots(); return;
+    }
+    if (act === 'addword') {
+      const key = pa.dataset.word;
+      const label = pa.dataset.label || key;
+      if (!state.srs[key]) {
+        state.srs[key] = { stage: 0, due: Date.now() + 5 * 60 * 1000, reps: 0, last: Date.now() };
+        saveSRS(); toast(`「${label}」已加入复习，5 分钟后第一次复习`);
+      } else {
+        delete state.srs[key]; saveSRS(); toast(`「${label}」已移出复习队列`);
+      }
+      setView(state.view); return;
+    }
+    if (act === 'phraseopt') {
+      const q = state.phraseQuiz;
+      if (!q || q.chosen !== null) return;
+      q.chosen = Number(pa.dataset.i); q.total++;
+      if (q.chosen === q.answer) q.correct++;
+      renderPhrases(); return;
+    }
+    if (act === 'phrasenext') {
+      state.phraseQuiz = makePhraseQuiz(fullPhrases());
+      renderPhrases(); return;
+    }
+    if (act === 'lookup') {
+      state.fullQuery.words = pa.dataset.word; state.page.words = 0;
+      setView('words'); return;
+    }
+    if (act === 'phrasefilter') {
+      state.fullQuery.phrases = pa.dataset.q; state.page.phrases = 0;
+      setView('phrases'); return;
+    }
+  }
 
   // 朗读
   const speakEl = t.closest('[data-speak]');
@@ -993,6 +1335,18 @@ document.addEventListener('click', e => {
 
 document.addEventListener('input', e => {
   const id = e.target.id;
+  const fullMap = { allrootSearch: 'roots', wordSearch: 'words', phraseSearch: 'phrases' };
+  if (fullMap[id]) {
+    const key = fullMap[id];
+    state.fullQuery[key] = e.target.value;
+    state.page[key] = 0;
+    state.phraseQuiz = null;
+    const pos = e.target.selectionStart;
+    ({ roots: renderAllRoots, words: renderWords, phrases: renderPhrases })[key]();
+    const input = $(`#${id}`);
+    if (input) { input.focus(); input.setSelectionRange(pos, pos); }
+    return;
+  }
   if (id === 'glossSearch') {
     state.glossQuery = e.target.value;
     const pos = e.target.selectionStart;
@@ -1027,3 +1381,4 @@ let savedTheme = 'dark';
 try { savedTheme = localStorage.getItem(THEME_KEY) || 'dark'; } catch {}
 applyTheme(savedTheme);
 setView('home');
+loadFullData();
