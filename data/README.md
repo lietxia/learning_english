@@ -20,6 +20,7 @@
 | `data/cet6.json`         | 六级词汇视图（从 vocabulary.json 派生） | 4413 词 |
 | `data/web-words.json`    | 网页精简词库（全量词 + 全部短语，供前端 fetch） | 5.1 MB |
 | `data/web-roots.json`    | 网页精简词根（全量词根 + 联想 + 全部关联词，供前端 fetch） | 1.65 MB |
+| `data/web-affixes.json`  | 网页词缀速查（105 前缀 / 101 后缀的含义与提示，供词素色块显示） | ~20 KB |
 | `data/schema/*.schema.json` | 上述 JSON 的 JSON Schema 定义 | 3 份 |
 | `data/tools/*.py`        | 生成视图 / 生成网页数据 / 校验数据库的脚本 | 3 个 |
 | `data/README.md`         | 本文件 | — |
@@ -130,7 +131,7 @@ python -c "import json; [json.load(open(f'data/{n}.json', encoding='utf-8')) for
 
 ## 五、使用与二次开发
 
-- **接网页**：`js/data.js` 等可直接改为 `fetch('data/vocabulary.json')` 等加载，字段一一对应。当前网页已用 `data/web-words.json` / `data/web-roots.json`（由 `python3 data/tools/make_web_data.py` 从主库生成）驱动「四六级词库 / 词组学习 / 完整词根库」三个视图。
+- **接网页**：`js/data.js` 等可直接改为 `fetch('data/vocabulary.json')` 等加载，字段一一对应。当前网页已用 `data/web-words.json` / `data/web-roots.json` / `data/web-affixes.json`（由 `python3 data/tools/make_web_data.py` 从主库生成）驱动「四六级词库 / 词组学习 / 完整词根库」三个视图。`web-words.json` 每条词带离线预计算的 `dec`（前缀链 + 词根 + 后缀链），页面直接渲染三色词素拆解。
 - **导出 Anki**：`vocabulary.json` 每条含 `word / pos / ipa_uk / definition_zh / example`，可直接生成卡片。
 - **扩词**：往 `vocabulary.json` 的 `words` 数组加词条即可；扩词根往 `roots.json` 的 `roots` 加。
 - **升级长尾**：`quality: "generated"` 的词根联想为模板生成，需要时可人工改写其 `mnemonic`。

@@ -10,18 +10,29 @@ const { ROOT_ETYMOLOGY, METHOD_STEPS, POLYSEMY } = DETAIL;
 const GLOSS = window.LE_GLOSS || { PREFIXES: {}, SUFFIXES: {}, ROOTS: {}, PREFIX_GROUPS: [], SUFFIX_ENTRIES: [], SOURCES: [] };
 
 /* ---------- 全量 JSON 数据：从 data/web-*.json 异步加载（与原有精选数据并存） ---------- */
-const FULL = { words: [], roots: [], phrases: [], loaded: false, error: null };
+const FULL = { words: [], roots: [], phrases: [], loaded: false, error: null,
+               affixes: { P: {}, S: {} }, rootById: new Map() };
 const PHRASE_INDEX = new Map();
 const WORD_INDEX = new Map();
 
+function buildAffixMap(a) {
+  const P = {}, S = {};
+  for (const x of (a && a.prefixes) || []) P[String(x.f).toLowerCase()] = { m: x.m || '', n: x.n || '' };
+  for (const x of (a && a.suffixes) || []) S[String(x.f).toLowerCase()] = { m: x.m || '', n: x.n || '', pos: x.pos || '' };
+  return { P, S };
+}
+
 async function loadFullData() {
   try {
-    const [wr, rr] = await Promise.all([
+    const [wr, rr, ar] = await Promise.all([
       fetch('data/web-words.json').then(r => { if (!r.ok) throw new Error('词库 HTTP ' + r.status); return r.json(); }),
-      fetch('data/web-roots.json').then(r => { if (!r.ok) throw new Error('词根 HTTP ' + r.status); return r.json(); })
+      fetch('data/web-roots.json').then(r => { if (!r.ok) throw new Error('词根 HTTP ' + r.status); return r.json(); }),
+      fetch('data/web-affixes.json').then(r => { if (!r.ok) throw new Error('词缀 HTTP ' + r.status); return r.json(); })
     ]);
     FULL.words = wr.words || [];
     FULL.roots = rr.roots || [];
+    FULL.affixes = buildAffixMap(ar);
+    for (const x of FULL.roots) FULL.rootById.set(x.id, x);
     for (const w of FULL.words) {
       WORD_INDEX.set(w.w.toLowerCase(), w);
       for (const p of (w.ph || [])) {
@@ -49,8 +60,14 @@ function fullWords() {
   const lv = state.fullLevel.words;
   let list = FULL.words;
   if (lv !== 'all') list = list.filter(w => w.l.includes(lv));
-  if (q) list = list.filter(w => w.w.toLowerCase().includes(q) || (w.d || '').includes(q) ||
-    (w.da || []).some(x => x.includes(q)) || (w.e?.en || '').toLowerCase().includes(q));
+  if (q) {
+    const isEn = /^[a-z][a-z\s'-]*$/.test(q);
+    list = list.filter(w => {
+      if (isEn) return w.w.toLowerCase().includes(q);
+      return w.w.toLowerCase().includes(q) || (w.d || '').includes(q) ||
+        (w.da || []).some(x => x.includes(q)) || (w.e?.en || '').toLowerCase().includes(q);
+    });
+  }
   return list;
 }
 function fullRoots() {
@@ -1018,29 +1035,21 @@ function renderPolysemy() {
 /* ============================================================
    视图 2b：完整词根库（全量 JSON）
    ============================================================ */
-/* ---------- 用词根给关联词做三色拆解（前缀 + 词根 + 后缀） ---------- */
-function plainForm(s) { return String(s || '').replace(/[^a-z]/gi, '').toLowerCase(); }
-function decomposeForRoot(word, rootX) {
-  const w = plainForm(word);
-  const forms = [rootX.r, ...(rootX.v || [])].map(plainForm)
-    .filter(f => f.length >= 2).sort((a, b) => b.length - a.length);
-  let rf = '', pos = -1;
-  for (const f of forms) {
-    const i = w.indexOf(f);
-    if (i >= 0 && f.length > rf.length) { rf = f; pos = i; }
-  }
-  if (!rf) return null;
-  const before = w.slice(0, pos), after = w.slice(pos + rf.length);
-  let pf = '', sf = '';
-  for (const p of PREFIXES) {
-    const f = plainForm(p.p);
-    if (f && f.length >= 2 && f.length > pf.length && before.endsWith(f) && before.length - f.length <= 2) pf = f;
-  }
-  for (const s of SUFFIXES) {
-    const f = plainForm(String(s.s).split(/[\s/]/)[0]);
-    if (f && f.length >= 3 && f.length > sf.length && after.startsWith(f) && after.length - f.length <= 2) sf = f;
-  }
-  return { p: pf, r: rf, s: sf };
+/* ---------- 用离线预计算的 dec 渲染三色拆解：前缀 + 词根 + 后缀 ---------- */
+function affixChip(kind, form) {
+  const g = (kind === 'prefix' ? FULL.affixes.P : FULL.affixes.S)[String(form).toLowerCase()] || {};
+  return glossChip(kind, {
+    form, common: g.m || '',
+    note: (g.pos ? g.pos + ' · ' : '') + (g.n || ''), inline: ''
+  });
+}
+function decompHtml(d, rootMeaning, rootSound) {
+  if (!d || !d.r) return '';
+  const parts = [];
+  for (const p of (d.p || [])) parts.push(affixChip('prefix', p));
+  parts.push(glossChip('root', { form: d.r, common: rootMeaning || '', note: rootSound || '', inline: '' }));
+  for (const s of (d.s || [])) parts.push(affixChip('suffix', s));
+  return `<div class="decomp">${parts.join('<span class="chip-plus">+</span>')}</div>`;
 }
 function renderRootWordChain(rootX) {
   const words = rootX.cw || [];
@@ -1049,7 +1058,6 @@ function renderRootWordChain(rootX) {
   const show = expanded ? words : words.slice(0, 8);
   const rows = show.map(c => {
     const full = WORD_INDEX.get(String(c.word).toLowerCase()) || {};
-    const d = decomposeForRoot(c.word, rootX);
     const added = !!state.srs[c.word];
     return `<div class="word-row">
       <div>
@@ -1062,11 +1070,7 @@ function renderRootWordChain(rootX) {
         <div class="word-meta mt-8">${posChips(full.p)}</div>
       </div>
       <div>
-        <div class="decomp">
-          ${d && d.p ? `${glossChip('prefix', glossPrefix(d.p))}<span class="chip-plus">+</span>` : ''}
-          ${glossChip('root', { form: d ? d.r : rootX.r, common: rootX.mz, note: rootX.zha || '', inline: '' })}
-          ${d && d.s ? `<span class="chip-plus">+</span>${glossChip('suffix', glossSuffix(d.s))}` : ''}
-        </div>
+        ${decompHtml(full.dec, rootX.mz, rootX.zha)}
         <div class="word-def"><b>${esc(full.d || c.zh || '')}</b></div>
         ${full.e && full.e.en ? `<div class="word-ex">${esc(full.e.en)}</div>` : ''}
         <div class="word-add">
@@ -1159,6 +1163,7 @@ function renderWords() {
             <div class="word-meta mt-8">${posChips(w.p)}</div>
           </div>
           <div>
+            ${decompHtml(w.dec, (FULL.rootById.get(w.dec?.rid) || {}).mz || '', '')}
             <div class="word-def"><b>${esc(w.d || (w.da || [])[0] || '')}</b></div>
             ${(w.da || []).length ? `<div class="hint-inline">${w.da.slice(0, 3).map(esc).join(' · ')}</div>` : ''}
             ${w.e?.en ? `<div class="word-ex">${esc(w.e.en)}</div>` : ''}
