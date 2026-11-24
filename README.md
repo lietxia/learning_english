@@ -7,6 +7,8 @@
 ![Build](https://img.shields.io/badge/build-zero%20config-lightgrey)
 ![Storage](https://img.shields.io/badge/storage-localStorage-orange)
 
+在线访问：<https://lietxia.github.io/learning_english/>
+
 仓库：<https://github.com/lietxia/learning_english>
 
 ---
@@ -50,7 +52,7 @@ php -S 127.0.0.1:8765
 
 然后访问 <http://127.0.0.1:8765/>。
 
-由于是纯静态站点，也可以直接丢到 GitHub Pages、Netlify、Vercel 或任意对象存储上托管，无需任何构建配置。页面依赖以下 CDN 资源，首次打开需要联网：
+站点已部署在 GitHub Pages：<https://lietxia.github.io/learning_english/>，直接打开即可，无需本地启动。也可以自行托管到 Netlify、Vercel 或任意对象存储，无需任何构建配置。页面依赖以下 CDN 资源，首次打开需要联网：
 
 - Bootstrap 6.0.0-alpha.1 CSS / JS（ESM）
 - Bootstrap Icons 1.11.3
